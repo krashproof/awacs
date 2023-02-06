@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "account"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -22,11 +24,15 @@ class ARN(BaseARN):
         )
 
 
+CloseAccount = Action("CloseAccount")
 DeleteAlternateContact = Action("DeleteAlternateContact")
 DisableRegion = Action("DisableRegion")
 EnableRegion = Action("EnableRegion")
+GetAccountInformation = Action("GetAccountInformation")
 GetAlternateContact = Action("GetAlternateContact")
+GetChallengeQuestions = Action("GetChallengeQuestions")
 GetContactInformation = Action("GetContactInformation")
 ListRegions = Action("ListRegions")
 PutAlternateContact = Action("PutAlternateContact")
+PutChallengeQuestions = Action("PutChallengeQuestions")
 PutContactInformation = Action("PutContactInformation")

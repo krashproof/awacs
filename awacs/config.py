@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "config"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -92,6 +94,7 @@ GetComplianceSummaryByConfigRule = Action("GetComplianceSummaryByConfigRule")
 GetComplianceSummaryByResourceType = Action("GetComplianceSummaryByResourceType")
 GetConformancePackComplianceDetails = Action("GetConformancePackComplianceDetails")
 GetConformancePackComplianceSummary = Action("GetConformancePackComplianceSummary")
+GetCustomRulePolicy = Action("GetCustomRulePolicy")
 GetDiscoveredResourceCounts = Action("GetDiscoveredResourceCounts")
 GetOrganizationConfigRuleDetailedStatus = Action(
     "GetOrganizationConfigRuleDetailedStatus"
@@ -99,12 +102,16 @@ GetOrganizationConfigRuleDetailedStatus = Action(
 GetOrganizationConformancePackDetailedStatus = Action(
     "GetOrganizationConformancePackDetailedStatus"
 )
+GetOrganizationCustomRulePolicy = Action("GetOrganizationCustomRulePolicy")
 GetResourceConfigHistory = Action("GetResourceConfigHistory")
+GetResourceEvaluationSummary = Action("GetResourceEvaluationSummary")
 GetResources = Action("GetResources")
 GetStoredQuery = Action("GetStoredQuery")
 GetTagKeys = Action("GetTagKeys")
 ListAggregateDiscoveredResources = Action("ListAggregateDiscoveredResources")
+ListConformancePackComplianceScores = Action("ListConformancePackComplianceScores")
 ListDiscoveredResources = Action("ListDiscoveredResources")
+ListResourceEvaluations = Action("ListResourceEvaluations")
 ListStoredQueries = Action("ListStoredQueries")
 ListTagsForResource = Action("ListTagsForResource")
 PutAggregationAuthorization = Action("PutAggregationAuthorization")
@@ -127,6 +134,7 @@ SelectResourceConfig = Action("SelectResourceConfig")
 StartConfigRulesEvaluation = Action("StartConfigRulesEvaluation")
 StartConfigurationRecorder = Action("StartConfigurationRecorder")
 StartRemediationExecution = Action("StartRemediationExecution")
+StartResourceEvaluation = Action("StartResourceEvaluation")
 StopConfigurationRecorder = Action("StopConfigurationRecorder")
 TagResource = Action("TagResource")
 UntagResource = Action("UntagResource")

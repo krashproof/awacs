@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "iotwireless"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -84,8 +86,10 @@ GetNetworkAnalyzerConfiguration = Action("GetNetworkAnalyzerConfiguration")
 GetPartnerAccount = Action("GetPartnerAccount")
 GetPosition = Action("GetPosition")
 GetPositionConfiguration = Action("GetPositionConfiguration")
+GetPositionEstimate = Action("GetPositionEstimate")
 GetResourceEventConfiguration = Action("GetResourceEventConfiguration")
 GetResourceLogLevel = Action("GetResourceLogLevel")
+GetResourcePosition = Action("GetResourcePosition")
 GetServiceEndpoint = Action("GetServiceEndpoint")
 GetServiceProfile = Action("GetServiceProfile")
 GetWirelessDevice = Action("GetWirelessDevice")
@@ -143,5 +147,6 @@ UpdateNetworkAnalyzerConfiguration = Action("UpdateNetworkAnalyzerConfiguration"
 UpdatePartnerAccount = Action("UpdatePartnerAccount")
 UpdatePosition = Action("UpdatePosition")
 UpdateResourceEventConfiguration = Action("UpdateResourceEventConfiguration")
+UpdateResourcePosition = Action("UpdateResourcePosition")
 UpdateWirelessDevice = Action("UpdateWirelessDevice")
 UpdateWirelessGateway = Action("UpdateWirelessGateway")

@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "dynamodb"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -36,6 +38,7 @@ DeleteTableReplica = Action("DeleteTableReplica")
 DescribeBackup = Action("DescribeBackup")
 DescribeContinuousBackups = Action("DescribeContinuousBackups")
 DescribeContributorInsights = Action("DescribeContributorInsights")
+DescribeEndpoints = Action("DescribeEndpoints")
 DescribeExport = Action("DescribeExport")
 DescribeGlobalTable = Action("DescribeGlobalTable")
 DescribeGlobalTableSettings = Action("DescribeGlobalTableSettings")
@@ -81,6 +84,7 @@ UpdateContinuousBackups = Action("UpdateContinuousBackups")
 UpdateContributorInsights = Action("UpdateContributorInsights")
 UpdateGlobalTable = Action("UpdateGlobalTable")
 UpdateGlobalTableSettings = Action("UpdateGlobalTableSettings")
+UpdateGlobalTableVersion = Action("UpdateGlobalTableVersion")
 UpdateItem = Action("UpdateItem")
 UpdateTable = Action("UpdateTable")
 UpdateTableReplicaAutoScaling = Action("UpdateTableReplicaAutoScaling")

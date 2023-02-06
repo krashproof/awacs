@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "sso"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -64,6 +66,7 @@ DescribeAccountAssignmentCreationStatus = Action(
 DescribeAccountAssignmentDeletionStatus = Action(
     "DescribeAccountAssignmentDeletionStatus"
 )
+DescribeDirectories = Action("DescribeDirectories")
 DescribeGroups = Action("DescribeGroups")
 DescribeInstanceAccessControlAttributeConfiguration = Action(
     "DescribeInstanceAccessControlAttributeConfiguration"
@@ -74,6 +77,7 @@ DescribePermissionSetProvisioningStatus = Action(
 )
 DescribePermissionsPolicies = Action("DescribePermissionsPolicies")
 DescribeRegisteredRegions = Action("DescribeRegisteredRegions")
+DescribeTrusts = Action("DescribeTrusts")
 DescribeUsers = Action("DescribeUsers")
 DetachCustomerManagedPolicyReferenceFromPermissionSet = Action(
     "DetachCustomerManagedPolicyReferenceFromPermissionSet"
@@ -130,6 +134,7 @@ ListProfileAssociations = Action("ListProfileAssociations")
 ListProfiles = Action("ListProfiles")
 ListTagsForResource = Action("ListTagsForResource")
 ProvisionPermissionSet = Action("ProvisionPermissionSet")
+PutApplicationAssignmentConfiguration = Action("PutApplicationAssignmentConfiguration")
 PutInlinePolicyToPermissionSet = Action("PutInlinePolicyToPermissionSet")
 PutMfaDeviceManagementForDirectory = Action("PutMfaDeviceManagementForDirectory")
 PutPermissionsBoundaryToPermissionSet = Action("PutPermissionsBoundaryToPermissionSet")

@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "emr-containers"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -23,14 +25,18 @@ class ARN(BaseARN):
 
 
 CancelJobRun = Action("CancelJobRun")
+CreateJobTemplate = Action("CreateJobTemplate")
 CreateManagedEndpoint = Action("CreateManagedEndpoint")
 CreateVirtualCluster = Action("CreateVirtualCluster")
+DeleteJobTemplate = Action("DeleteJobTemplate")
 DeleteManagedEndpoint = Action("DeleteManagedEndpoint")
 DeleteVirtualCluster = Action("DeleteVirtualCluster")
 DescribeJobRun = Action("DescribeJobRun")
+DescribeJobTemplate = Action("DescribeJobTemplate")
 DescribeManagedEndpoint = Action("DescribeManagedEndpoint")
 DescribeVirtualCluster = Action("DescribeVirtualCluster")
 ListJobRuns = Action("ListJobRuns")
+ListJobTemplates = Action("ListJobTemplates")
 ListManagedEndpoints = Action("ListManagedEndpoints")
 ListTagsForResource = Action("ListTagsForResource")
 ListVirtualClusters = Action("ListVirtualClusters")

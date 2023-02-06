@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "iot"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -200,6 +202,7 @@ ListPrincipalPolicies = Action("ListPrincipalPolicies")
 ListPrincipalThings = Action("ListPrincipalThings")
 ListProvisioningTemplateVersions = Action("ListProvisioningTemplateVersions")
 ListProvisioningTemplates = Action("ListProvisioningTemplates")
+ListRelatedResourcesForAuditFinding = Action("ListRelatedResourcesForAuditFinding")
 ListRetainedMessages = Action("ListRetainedMessages")
 ListRoleAliases = Action("ListRoleAliases")
 ListScheduledAudits = Action("ListScheduledAudits")

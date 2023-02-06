@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "grafana"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -29,6 +31,7 @@ DeleteWorkspace = Action("DeleteWorkspace")
 DeleteWorkspaceApiKey = Action("DeleteWorkspaceApiKey")
 DescribeWorkspace = Action("DescribeWorkspace")
 DescribeWorkspaceAuthentication = Action("DescribeWorkspaceAuthentication")
+DescribeWorkspaceConfiguration = Action("DescribeWorkspaceConfiguration")
 DisassociateLicense = Action("DisassociateLicense")
 ListPermissions = Action("ListPermissions")
 ListTagsForResource = Action("ListTagsForResource")
@@ -38,3 +41,4 @@ UntagResource = Action("UntagResource")
 UpdatePermissions = Action("UpdatePermissions")
 UpdateWorkspace = Action("UpdateWorkspace")
 UpdateWorkspaceAuthentication = Action("UpdateWorkspaceAuthentication")
+UpdateWorkspaceConfiguration = Action("UpdateWorkspaceConfiguration")

@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "resource-groups"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -24,6 +26,7 @@ class ARN(BaseARN):
 
 CreateGroup = Action("CreateGroup")
 DeleteGroup = Action("DeleteGroup")
+GetAccountSettings = Action("GetAccountSettings")
 GetGroup = Action("GetGroup")
 GetGroupConfiguration = Action("GetGroupConfiguration")
 GetGroupQuery = Action("GetGroupQuery")
@@ -37,5 +40,6 @@ SearchResources = Action("SearchResources")
 Tag = Action("Tag")
 UngroupResources = Action("UngroupResources")
 Untag = Action("Untag")
+UpdateAccountSettings = Action("UpdateAccountSettings")
 UpdateGroup = Action("UpdateGroup")
 UpdateGroupQuery = Action("UpdateGroupQuery")

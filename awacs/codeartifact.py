@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "codeartifact"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -29,6 +31,7 @@ CreateDomain = Action("CreateDomain")
 CreateRepository = Action("CreateRepository")
 DeleteDomain = Action("DeleteDomain")
 DeleteDomainPermissionsPolicy = Action("DeleteDomainPermissionsPolicy")
+DeletePackage = Action("DeletePackage")
 DeletePackageVersions = Action("DeletePackageVersions")
 DeleteRepository = Action("DeleteRepository")
 DeleteRepositoryPermissionsPolicy = Action("DeleteRepositoryPermissionsPolicy")

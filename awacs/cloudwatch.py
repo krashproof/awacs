@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "cloudwatch"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -42,6 +44,7 @@ GetMetricData = Action("GetMetricData")
 GetMetricStatistics = Action("GetMetricStatistics")
 GetMetricStream = Action("GetMetricStream")
 GetMetricWidgetImage = Action("GetMetricWidgetImage")
+Link = Action("Link")
 ListDashboards = Action("ListDashboards")
 ListManagedInsightRules = Action("ListManagedInsightRules")
 ListMetricStreams = Action("ListMetricStreams")

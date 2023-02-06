@@ -3,15 +3,17 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
-service_name = "Identity And Access Management"
+service_name = "AWS Identity and Access Management"
 prefix = "iam"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -47,6 +49,7 @@ DeactivateMFADevice = Action("DeactivateMFADevice")
 DeleteAccessKey = Action("DeleteAccessKey")
 DeleteAccountAlias = Action("DeleteAccountAlias")
 DeleteAccountPasswordPolicy = Action("DeleteAccountPasswordPolicy")
+DeleteCloudFrontPublicKey = Action("DeleteCloudFrontPublicKey")
 DeleteGroup = Action("DeleteGroup")
 DeleteGroupPolicy = Action("DeleteGroupPolicy")
 DeleteInstanceProfile = Action("DeleteInstanceProfile")
@@ -77,8 +80,11 @@ GenerateOrganizationsAccessReport = Action("GenerateOrganizationsAccessReport")
 GenerateServiceLastAccessedDetails = Action("GenerateServiceLastAccessedDetails")
 GetAccessKeyLastUsed = Action("GetAccessKeyLastUsed")
 GetAccountAuthorizationDetails = Action("GetAccountAuthorizationDetails")
+GetAccountEmailAddress = Action("GetAccountEmailAddress")
+GetAccountName = Action("GetAccountName")
 GetAccountPasswordPolicy = Action("GetAccountPasswordPolicy")
 GetAccountSummary = Action("GetAccountSummary")
+GetCloudFrontPublicKey = Action("GetCloudFrontPublicKey")
 GetContextKeysForCustomPolicy = Action("GetContextKeysForCustomPolicy")
 GetContextKeysForPrincipalPolicy = Action("GetContextKeysForPrincipalPolicy")
 GetCredentialReport = Action("GetCredentialReport")
@@ -107,6 +113,7 @@ ListAccountAliases = Action("ListAccountAliases")
 ListAttachedGroupPolicies = Action("ListAttachedGroupPolicies")
 ListAttachedRolePolicies = Action("ListAttachedRolePolicies")
 ListAttachedUserPolicies = Action("ListAttachedUserPolicies")
+ListCloudFrontPublicKeys = Action("ListCloudFrontPublicKeys")
 ListEntitiesForPolicy = Action("ListEntitiesForPolicy")
 ListGroupPolicies = Action("ListGroupPolicies")
 ListGroups = Action("ListGroups")
@@ -128,6 +135,7 @@ ListRoles = Action("ListRoles")
 ListSAMLProviderTags = Action("ListSAMLProviderTags")
 ListSAMLProviders = Action("ListSAMLProviders")
 ListSSHPublicKeys = Action("ListSSHPublicKeys")
+ListSTSRegionalEndpointsStatus = Action("ListSTSRegionalEndpointsStatus")
 ListServerCertificateTags = Action("ListServerCertificateTags")
 ListServerCertificates = Action("ListServerCertificates")
 ListServiceSpecificCredentials = Action("ListServiceSpecificCredentials")
@@ -151,6 +159,7 @@ RequestSmsMfaRegistration = Action("RequestSmsMfaRegistration")
 ResetServiceSpecificCredential = Action("ResetServiceSpecificCredential")
 ResyncMFADevice = Action("ResyncMFADevice")
 SetDefaultPolicyVersion = Action("SetDefaultPolicyVersion")
+SetSTSRegionalEndpointStatus = Action("SetSTSRegionalEndpointStatus")
 SetSecurityTokenServicePreferences = Action("SetSecurityTokenServicePreferences")
 SimulateCustomPolicy = Action("SimulateCustomPolicy")
 SimulatePrincipalPolicy = Action("SimulatePrincipalPolicy")
@@ -171,8 +180,11 @@ UntagSAMLProvider = Action("UntagSAMLProvider")
 UntagServerCertificate = Action("UntagServerCertificate")
 UntagUser = Action("UntagUser")
 UpdateAccessKey = Action("UpdateAccessKey")
+UpdateAccountEmailAddress = Action("UpdateAccountEmailAddress")
+UpdateAccountName = Action("UpdateAccountName")
 UpdateAccountPasswordPolicy = Action("UpdateAccountPasswordPolicy")
 UpdateAssumeRolePolicy = Action("UpdateAssumeRolePolicy")
+UpdateCloudFrontPublicKey = Action("UpdateCloudFrontPublicKey")
 UpdateGroup = Action("UpdateGroup")
 UpdateLoginProfile = Action("UpdateLoginProfile")
 UpdateOpenIDConnectProviderThumbprint = Action("UpdateOpenIDConnectProviderThumbprint")
@@ -184,6 +196,7 @@ UpdateServerCertificate = Action("UpdateServerCertificate")
 UpdateServiceSpecificCredential = Action("UpdateServiceSpecificCredential")
 UpdateSigningCertificate = Action("UpdateSigningCertificate")
 UpdateUser = Action("UpdateUser")
+UploadCloudFrontPublicKey = Action("UploadCloudFrontPublicKey")
 UploadSSHPublicKey = Action("UploadSSHPublicKey")
 UploadServerCertificate = Action("UploadServerCertificate")
 UploadSigningCertificate = Action("UploadSigningCertificate")

@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "nimble"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -44,6 +46,7 @@ GetLaunchProfileInitialization = Action("GetLaunchProfileInitialization")
 GetLaunchProfileMember = Action("GetLaunchProfileMember")
 GetStreamingImage = Action("GetStreamingImage")
 GetStreamingSession = Action("GetStreamingSession")
+GetStreamingSessionBackup = Action("GetStreamingSessionBackup")
 GetStreamingSessionStream = Action("GetStreamingSessionStream")
 GetStudio = Action("GetStudio")
 GetStudioComponent = Action("GetStudioComponent")
@@ -53,6 +56,7 @@ ListEulas = Action("ListEulas")
 ListLaunchProfileMembers = Action("ListLaunchProfileMembers")
 ListLaunchProfiles = Action("ListLaunchProfiles")
 ListStreamingImages = Action("ListStreamingImages")
+ListStreamingSessionBackups = Action("ListStreamingSessionBackups")
 ListStreamingSessions = Action("ListStreamingSessions")
 ListStudioComponents = Action("ListStudioComponents")
 ListStudioMembers = Action("ListStudioMembers")

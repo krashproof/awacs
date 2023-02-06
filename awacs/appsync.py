@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "appsync"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -40,6 +42,7 @@ DeleteGraphqlApi = Action("DeleteGraphqlApi")
 DeleteResolver = Action("DeleteResolver")
 DeleteType = Action("DeleteType")
 DisassociateApi = Action("DisassociateApi")
+EvaluateCode = Action("EvaluateCode")
 EvaluateMappingTemplate = Action("EvaluateMappingTemplate")
 FlushApiCache = Action("FlushApiCache")
 GetApiAssociation = Action("GetApiAssociation")

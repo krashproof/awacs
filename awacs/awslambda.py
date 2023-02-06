@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "lambda"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -56,6 +58,7 @@ GetLayerVersionByArn = Action("GetLayerVersionByArn")
 GetLayerVersionPolicy = Action("GetLayerVersionPolicy")
 GetPolicy = Action("GetPolicy")
 GetProvisionedConcurrencyConfig = Action("GetProvisionedConcurrencyConfig")
+GetRuntimeManagementConfig = Action("GetRuntimeManagementConfig")
 InvokeAsync = Action("InvokeAsync")
 InvokeFunction = Action("InvokeFunction")
 InvokeFunctionUrl = Action("InvokeFunctionUrl")
@@ -77,6 +80,7 @@ PutFunctionCodeSigningConfig = Action("PutFunctionCodeSigningConfig")
 PutFunctionConcurrency = Action("PutFunctionConcurrency")
 PutFunctionEventInvokeConfig = Action("PutFunctionEventInvokeConfig")
 PutProvisionedConcurrencyConfig = Action("PutProvisionedConcurrencyConfig")
+PutRuntimeManagementConfig = Action("PutRuntimeManagementConfig")
 RemoveLayerVersionPermission = Action("RemoveLayerVersionPermission")
 RemovePermission = Action("RemovePermission")
 TagResource = Action("TagResource")

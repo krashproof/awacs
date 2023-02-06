@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "kinesisvideo"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -28,7 +30,10 @@ CreateSignalingChannel = Action("CreateSignalingChannel")
 CreateStream = Action("CreateStream")
 DeleteSignalingChannel = Action("DeleteSignalingChannel")
 DeleteStream = Action("DeleteStream")
+DescribeEdgeConfiguration = Action("DescribeEdgeConfiguration")
 DescribeImageGenerationConfiguration = Action("DescribeImageGenerationConfiguration")
+DescribeMappedResourceConfiguration = Action("DescribeMappedResourceConfiguration")
+DescribeMediaStorageConfiguration = Action("DescribeMediaStorageConfiguration")
 DescribeNotificationConfiguration = Action("DescribeNotificationConfiguration")
 DescribeSignalingChannel = Action("DescribeSignalingChannel")
 DescribeStream = Action("DescribeStream")
@@ -41,6 +46,7 @@ GetImages = Action("GetImages")
 GetMedia = Action("GetMedia")
 GetMediaForFragmentList = Action("GetMediaForFragmentList")
 GetSignalingChannelEndpoint = Action("GetSignalingChannelEndpoint")
+JoinStorageSession = Action("JoinStorageSession")
 ListFragments = Action("ListFragments")
 ListSignalingChannels = Action("ListSignalingChannels")
 ListStreams = Action("ListStreams")
@@ -48,12 +54,14 @@ ListTagsForResource = Action("ListTagsForResource")
 ListTagsForStream = Action("ListTagsForStream")
 PutMedia = Action("PutMedia")
 SendAlexaOfferToMaster = Action("SendAlexaOfferToMaster")
+StartEdgeConfigurationUpdate = Action("StartEdgeConfigurationUpdate")
 TagResource = Action("TagResource")
 TagStream = Action("TagStream")
 UntagResource = Action("UntagResource")
 UntagStream = Action("UntagStream")
 UpdateDataRetention = Action("UpdateDataRetention")
 UpdateImageGenerationConfiguration = Action("UpdateImageGenerationConfiguration")
+UpdateMediaStorageConfiguration = Action("UpdateMediaStorageConfiguration")
 UpdateNotificationConfiguration = Action("UpdateNotificationConfiguration")
 UpdateSignalingChannel = Action("UpdateSignalingChannel")
 UpdateStream = Action("UpdateStream")

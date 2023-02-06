@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "logs"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -28,6 +30,7 @@ CreateExportTask = Action("CreateExportTask")
 CreateLogDelivery = Action("CreateLogDelivery")
 CreateLogGroup = Action("CreateLogGroup")
 CreateLogStream = Action("CreateLogStream")
+DeleteDataProtectionPolicy = Action("DeleteDataProtectionPolicy")
 DeleteDestination = Action("DeleteDestination")
 DeleteLogDelivery = Action("DeleteLogDelivery")
 DeleteLogGroup = Action("DeleteLogGroup")
@@ -48,13 +51,17 @@ DescribeResourcePolicies = Action("DescribeResourcePolicies")
 DescribeSubscriptionFilters = Action("DescribeSubscriptionFilters")
 DisassociateKmsKey = Action("DisassociateKmsKey")
 FilterLogEvents = Action("FilterLogEvents")
+GetDataProtectionPolicy = Action("GetDataProtectionPolicy")
 GetLogDelivery = Action("GetLogDelivery")
 GetLogEvents = Action("GetLogEvents")
 GetLogGroupFields = Action("GetLogGroupFields")
 GetLogRecord = Action("GetLogRecord")
 GetQueryResults = Action("GetQueryResults")
+Link = Action("Link")
 ListLogDeliveries = Action("ListLogDeliveries")
+ListTagsForResource = Action("ListTagsForResource")
 ListTagsLogGroup = Action("ListTagsLogGroup")
+PutDataProtectionPolicy = Action("PutDataProtectionPolicy")
 PutDestination = Action("PutDestination")
 PutDestinationPolicy = Action("PutDestinationPolicy")
 PutLogEvents = Action("PutLogEvents")
@@ -66,6 +73,9 @@ PutSubscriptionFilter = Action("PutSubscriptionFilter")
 StartQuery = Action("StartQuery")
 StopQuery = Action("StopQuery")
 TagLogGroup = Action("TagLogGroup")
+TagResource = Action("TagResource")
 TestMetricFilter = Action("TestMetricFilter")
+Unmask = Action("Unmask")
 UntagLogGroup = Action("UntagLogGroup")
+UntagResource = Action("UntagResource")
 UpdateLogDelivery = Action("UpdateLogDelivery")

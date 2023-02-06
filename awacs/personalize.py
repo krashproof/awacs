@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "personalize"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -31,6 +33,7 @@ CreateDatasetGroup = Action("CreateDatasetGroup")
 CreateDatasetImportJob = Action("CreateDatasetImportJob")
 CreateEventTracker = Action("CreateEventTracker")
 CreateFilter = Action("CreateFilter")
+CreateMetricAttribution = Action("CreateMetricAttribution")
 CreateRecommender = Action("CreateRecommender")
 CreateSchema = Action("CreateSchema")
 CreateSolution = Action("CreateSolution")
@@ -40,6 +43,7 @@ DeleteDataset = Action("DeleteDataset")
 DeleteDatasetGroup = Action("DeleteDatasetGroup")
 DeleteEventTracker = Action("DeleteEventTracker")
 DeleteFilter = Action("DeleteFilter")
+DeleteMetricAttribution = Action("DeleteMetricAttribution")
 DeleteRecommender = Action("DeleteRecommender")
 DeleteSchema = Action("DeleteSchema")
 DeleteSolution = Action("DeleteSolution")
@@ -54,6 +58,7 @@ DescribeDatasetImportJob = Action("DescribeDatasetImportJob")
 DescribeEventTracker = Action("DescribeEventTracker")
 DescribeFeatureTransformation = Action("DescribeFeatureTransformation")
 DescribeFilter = Action("DescribeFilter")
+DescribeMetricAttribution = Action("DescribeMetricAttribution")
 DescribeRecipe = Action("DescribeRecipe")
 DescribeRecommender = Action("DescribeRecommender")
 DescribeSchema = Action("DescribeSchema")
@@ -71,6 +76,8 @@ ListDatasetImportJobs = Action("ListDatasetImportJobs")
 ListDatasets = Action("ListDatasets")
 ListEventTrackers = Action("ListEventTrackers")
 ListFilters = Action("ListFilters")
+ListMetricAttributionMetrics = Action("ListMetricAttributionMetrics")
+ListMetricAttributions = Action("ListMetricAttributions")
 ListRecipes = Action("ListRecipes")
 ListRecommenders = Action("ListRecommenders")
 ListSchemas = Action("ListSchemas")
@@ -86,4 +93,5 @@ StopSolutionVersionCreation = Action("StopSolutionVersionCreation")
 TagResource = Action("TagResource")
 UntagResource = Action("UntagResource")
 UpdateCampaign = Action("UpdateCampaign")
+UpdateMetricAttribution = Action("UpdateMetricAttribution")
 UpdateRecommender = Action("UpdateRecommender")

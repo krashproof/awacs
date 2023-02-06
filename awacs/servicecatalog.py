@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "servicecatalog"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -96,6 +98,7 @@ GetAWSOrganizationsAccessStatus = Action("GetAWSOrganizationsAccessStatus")
 GetApplication = Action("GetApplication")
 GetAssociatedResource = Action("GetAssociatedResource")
 GetAttributeGroup = Action("GetAttributeGroup")
+GetConfiguration = Action("GetConfiguration")
 GetProvisionedProductOutputs = Action("GetProvisionedProductOutputs")
 ImportAsProvisionedProduct = Action("ImportAsProvisionedProduct")
 ListAcceptedPortfolioShares = Action("ListAcceptedPortfolioShares")
@@ -129,6 +132,7 @@ ListStackInstancesForProvisionedProduct = Action(
 ListTagOptions = Action("ListTagOptions")
 ListTagsForResource = Action("ListTagsForResource")
 ProvisionProduct = Action("ProvisionProduct")
+PutConfiguration = Action("PutConfiguration")
 RejectPortfolioShare = Action("RejectPortfolioShare")
 ScanProvisionedProducts = Action("ScanProvisionedProducts")
 SearchProducts = Action("SearchProducts")

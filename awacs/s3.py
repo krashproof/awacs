@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "s3"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -92,6 +94,7 @@ GetMetricsConfiguration = Action("GetMetricsConfiguration")
 GetMultiRegionAccessPoint = Action("GetMultiRegionAccessPoint")
 GetMultiRegionAccessPointPolicy = Action("GetMultiRegionAccessPointPolicy")
 GetMultiRegionAccessPointPolicyStatus = Action("GetMultiRegionAccessPointPolicyStatus")
+GetMultiRegionAccessPointRoutes = Action("GetMultiRegionAccessPointRoutes")
 GetObject = Action("GetObject")
 GetObjectAcl = Action("GetObjectAcl")
 GetObjectAttributes = Action("GetObjectAttributes")
@@ -167,5 +170,6 @@ ReplicateDelete = Action("ReplicateDelete")
 ReplicateObject = Action("ReplicateObject")
 ReplicateTags = Action("ReplicateTags")
 RestoreObject = Action("RestoreObject")
+SubmitMultiRegionAccessPointRoutes = Action("SubmitMultiRegionAccessPointRoutes")
 UpdateJobPriority = Action("UpdateJobPriority")
 UpdateJobStatus = Action("UpdateJobStatus")

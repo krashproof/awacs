@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "cloudfront"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -23,8 +25,10 @@ class ARN(BaseARN):
 
 
 AssociateAlias = Action("AssociateAlias")
+CopyDistribution = Action("CopyDistribution")
 CreateCachePolicy = Action("CreateCachePolicy")
 CreateCloudFrontOriginAccessIdentity = Action("CreateCloudFrontOriginAccessIdentity")
+CreateContinuousDeploymentPolicy = Action("CreateContinuousDeploymentPolicy")
 CreateDistribution = Action("CreateDistribution")
 CreateDistributionWithTags = Action("CreateDistributionWithTags")
 CreateFieldLevelEncryptionConfig = Action("CreateFieldLevelEncryptionConfig")
@@ -43,6 +47,7 @@ CreateStreamingDistribution = Action("CreateStreamingDistribution")
 CreateStreamingDistributionWithTags = Action("CreateStreamingDistributionWithTags")
 DeleteCachePolicy = Action("DeleteCachePolicy")
 DeleteCloudFrontOriginAccessIdentity = Action("DeleteCloudFrontOriginAccessIdentity")
+DeleteContinuousDeploymentPolicy = Action("DeleteContinuousDeploymentPolicy")
 DeleteDistribution = Action("DeleteDistribution")
 DeleteFieldLevelEncryptionConfig = Action("DeleteFieldLevelEncryptionConfig")
 DeleteFieldLevelEncryptionProfile = Action("DeleteFieldLevelEncryptionProfile")
@@ -62,6 +67,8 @@ GetCloudFrontOriginAccessIdentity = Action("GetCloudFrontOriginAccessIdentity")
 GetCloudFrontOriginAccessIdentityConfig = Action(
     "GetCloudFrontOriginAccessIdentityConfig"
 )
+GetContinuousDeploymentPolicy = Action("GetContinuousDeploymentPolicy")
+GetContinuousDeploymentPolicyConfig = Action("GetContinuousDeploymentPolicyConfig")
 GetDistribution = Action("GetDistribution")
 GetDistributionConfig = Action("GetDistributionConfig")
 GetFieldLevelEncryption = Action("GetFieldLevelEncryption")
@@ -88,6 +95,7 @@ GetStreamingDistributionConfig = Action("GetStreamingDistributionConfig")
 ListCachePolicies = Action("ListCachePolicies")
 ListCloudFrontOriginAccessIdentities = Action("ListCloudFrontOriginAccessIdentities")
 ListConflictingAliases = Action("ListConflictingAliases")
+ListContinuousDeploymentPolicies = Action("ListContinuousDeploymentPolicies")
 ListDistributions = Action("ListDistributions")
 ListDistributionsByCachePolicyId = Action("ListDistributionsByCachePolicyId")
 ListDistributionsByKeyGroup = Action("ListDistributionsByKeyGroup")
@@ -121,7 +129,9 @@ TestFunction = Action("TestFunction")
 UntagResource = Action("UntagResource")
 UpdateCachePolicy = Action("UpdateCachePolicy")
 UpdateCloudFrontOriginAccessIdentity = Action("UpdateCloudFrontOriginAccessIdentity")
+UpdateContinuousDeploymentPolicy = Action("UpdateContinuousDeploymentPolicy")
 UpdateDistribution = Action("UpdateDistribution")
+UpdateDistributionWithStagingConfig = Action("UpdateDistributionWithStagingConfig")
 UpdateFieldLevelEncryptionConfig = Action("UpdateFieldLevelEncryptionConfig")
 UpdateFieldLevelEncryptionProfile = Action("UpdateFieldLevelEncryptionProfile")
 UpdateFunction = Action("UpdateFunction")

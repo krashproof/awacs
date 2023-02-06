@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "gamelift"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -31,6 +33,7 @@ CreateFleetLocations = Action("CreateFleetLocations")
 CreateGameServerGroup = Action("CreateGameServerGroup")
 CreateGameSession = Action("CreateGameSession")
 CreateGameSessionQueue = Action("CreateGameSessionQueue")
+CreateLocation = Action("CreateLocation")
 CreateMatchmakingConfiguration = Action("CreateMatchmakingConfiguration")
 CreateMatchmakingRuleSet = Action("CreateMatchmakingRuleSet")
 CreatePlayerSession = Action("CreatePlayerSession")
@@ -44,15 +47,18 @@ DeleteFleet = Action("DeleteFleet")
 DeleteFleetLocations = Action("DeleteFleetLocations")
 DeleteGameServerGroup = Action("DeleteGameServerGroup")
 DeleteGameSessionQueue = Action("DeleteGameSessionQueue")
+DeleteLocation = Action("DeleteLocation")
 DeleteMatchmakingConfiguration = Action("DeleteMatchmakingConfiguration")
 DeleteMatchmakingRuleSet = Action("DeleteMatchmakingRuleSet")
 DeleteScalingPolicy = Action("DeleteScalingPolicy")
 DeleteScript = Action("DeleteScript")
 DeleteVpcPeeringAuthorization = Action("DeleteVpcPeeringAuthorization")
 DeleteVpcPeeringConnection = Action("DeleteVpcPeeringConnection")
+DeregisterCompute = Action("DeregisterCompute")
 DeregisterGameServer = Action("DeregisterGameServer")
 DescribeAlias = Action("DescribeAlias")
 DescribeBuild = Action("DescribeBuild")
+DescribeCompute = Action("DescribeCompute")
 DescribeEC2InstanceLimits = Action("DescribeEC2InstanceLimits")
 DescribeFleetAttributes = Action("DescribeFleetAttributes")
 DescribeFleetCapacity = Action("DescribeFleetCapacity")
@@ -79,16 +85,21 @@ DescribeScalingPolicies = Action("DescribeScalingPolicies")
 DescribeScript = Action("DescribeScript")
 DescribeVpcPeeringAuthorizations = Action("DescribeVpcPeeringAuthorizations")
 DescribeVpcPeeringConnections = Action("DescribeVpcPeeringConnections")
+GetComputeAccess = Action("GetComputeAccess")
+GetComputeAuthToken = Action("GetComputeAuthToken")
 GetGameSessionLogUrl = Action("GetGameSessionLogUrl")
 GetInstanceAccess = Action("GetInstanceAccess")
 ListAliases = Action("ListAliases")
 ListBuilds = Action("ListBuilds")
+ListCompute = Action("ListCompute")
 ListFleets = Action("ListFleets")
 ListGameServerGroups = Action("ListGameServerGroups")
 ListGameServers = Action("ListGameServers")
+ListLocations = Action("ListLocations")
 ListScripts = Action("ListScripts")
 ListTagsForResource = Action("ListTagsForResource")
 PutScalingPolicy = Action("PutScalingPolicy")
+RegisterCompute = Action("RegisterCompute")
 RegisterGameServer = Action("RegisterGameServer")
 RequestUploadCredentials = Action("RequestUploadCredentials")
 ResolveAlias = Action("ResolveAlias")

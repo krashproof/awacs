@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "textract"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -29,6 +31,9 @@ DetectDocumentText = Action("DetectDocumentText")
 GetDocumentAnalysis = Action("GetDocumentAnalysis")
 GetDocumentTextDetection = Action("GetDocumentTextDetection")
 GetExpenseAnalysis = Action("GetExpenseAnalysis")
+GetLendingAnalysis = Action("GetLendingAnalysis")
+GetLendingAnalysisSummary = Action("GetLendingAnalysisSummary")
 StartDocumentAnalysis = Action("StartDocumentAnalysis")
 StartDocumentTextDetection = Action("StartDocumentTextDetection")
 StartExpenseAnalysis = Action("StartExpenseAnalysis")
+StartLendingAnalysis = Action("StartLendingAnalysis")

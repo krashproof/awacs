@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "billing"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -22,4 +24,16 @@ class ARN(BaseARN):
         )
 
 
+GetBillingData = Action("GetBillingData")
+GetBillingDetails = Action("GetBillingDetails")
+GetBillingNotifications = Action("GetBillingNotifications")
+GetBillingPreferences = Action("GetBillingPreferences")
+GetContractInformation = Action("GetContractInformation")
+GetCredits = Action("GetCredits")
+GetIAMAccessPreference = Action("GetIAMAccessPreference")
+GetSellerOfRecord = Action("GetSellerOfRecord")
 ListBillingViews = Action("ListBillingViews")
+PutContractInformation = Action("PutContractInformation")
+RedeemCredits = Action("RedeemCredits")
+UpdateBillingPreferences = Action("UpdateBillingPreferences")
+UpdateIAMAccessPreference = Action("UpdateIAMAccessPreference")

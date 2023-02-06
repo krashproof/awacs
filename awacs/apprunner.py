@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "apprunner"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -28,17 +30,20 @@ CreateConnection = Action("CreateConnection")
 CreateObservabilityConfiguration = Action("CreateObservabilityConfiguration")
 CreateService = Action("CreateService")
 CreateVpcConnector = Action("CreateVpcConnector")
+CreateVpcIngressConnection = Action("CreateVpcIngressConnection")
 DeleteAutoScalingConfiguration = Action("DeleteAutoScalingConfiguration")
 DeleteConnection = Action("DeleteConnection")
 DeleteObservabilityConfiguration = Action("DeleteObservabilityConfiguration")
 DeleteService = Action("DeleteService")
 DeleteVpcConnector = Action("DeleteVpcConnector")
+DeleteVpcIngressConnection = Action("DeleteVpcIngressConnection")
 DescribeAutoScalingConfiguration = Action("DescribeAutoScalingConfiguration")
 DescribeCustomDomains = Action("DescribeCustomDomains")
 DescribeObservabilityConfiguration = Action("DescribeObservabilityConfiguration")
 DescribeOperation = Action("DescribeOperation")
 DescribeService = Action("DescribeService")
 DescribeVpcConnector = Action("DescribeVpcConnector")
+DescribeVpcIngressConnection = Action("DescribeVpcIngressConnection")
 DisassociateCustomDomain = Action("DisassociateCustomDomain")
 ListAutoScalingConfigurations = Action("ListAutoScalingConfigurations")
 ListConnections = Action("ListConnections")
@@ -47,9 +52,11 @@ ListOperations = Action("ListOperations")
 ListServices = Action("ListServices")
 ListTagsForResource = Action("ListTagsForResource")
 ListVpcConnectors = Action("ListVpcConnectors")
+ListVpcIngressConnections = Action("ListVpcIngressConnections")
 PauseService = Action("PauseService")
 ResumeService = Action("ResumeService")
 StartDeployment = Action("StartDeployment")
 TagResource = Action("TagResource")
 UntagResource = Action("UntagResource")
 UpdateService = Action("UpdateService")
+UpdateVpcIngressConnection = Action("UpdateVpcIngressConnection")

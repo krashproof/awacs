@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "geo"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -55,6 +57,7 @@ GetMapSprites = Action("GetMapSprites")
 GetMapStyleDescriptor = Action("GetMapStyleDescriptor")
 GetMapTile = Action("GetMapTile")
 GetMapTileJson = Action("GetMapTileJson")
+GetPlace = Action("GetPlace")
 ListDevicePositions = Action("ListDevicePositions")
 ListGeofenceCollections = Action("ListGeofenceCollections")
 ListGeofences = Action("ListGeofences")

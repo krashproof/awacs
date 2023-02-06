@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "rds"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -35,6 +37,7 @@ CopyDBClusterSnapshot = Action("CopyDBClusterSnapshot")
 CopyDBParameterGroup = Action("CopyDBParameterGroup")
 CopyDBSnapshot = Action("CopyDBSnapshot")
 CopyOptionGroup = Action("CopyOptionGroup")
+CreateBlueGreenDeployment = Action("CreateBlueGreenDeployment")
 CreateCustomAvailabilityZone = Action("CreateCustomAvailabilityZone")
 CreateCustomDBEngineVersion = Action("CreateCustomDBEngineVersion")
 CreateDBCluster = Action("CreateDBCluster")
@@ -53,6 +56,7 @@ CreateEventSubscription = Action("CreateEventSubscription")
 CreateGlobalCluster = Action("CreateGlobalCluster")
 CreateOptionGroup = Action("CreateOptionGroup")
 CrossRegionCommunication = Action("CrossRegionCommunication")
+DeleteBlueGreenDeployment = Action("DeleteBlueGreenDeployment")
 DeleteCustomAvailabilityZone = Action("DeleteCustomAvailabilityZone")
 DeleteCustomDBEngineVersion = Action("DeleteCustomDBEngineVersion")
 DeleteDBCluster = Action("DeleteDBCluster")
@@ -73,6 +77,7 @@ DeleteInstallationMedia = Action("DeleteInstallationMedia")
 DeleteOptionGroup = Action("DeleteOptionGroup")
 DeregisterDBProxyTargets = Action("DeregisterDBProxyTargets")
 DescribeAccountAttributes = Action("DescribeAccountAttributes")
+DescribeBlueGreenDeployments = Action("DescribeBlueGreenDeployments")
 DescribeCertificates = Action("DescribeCertificates")
 DescribeCustomAvailabilityZones = Action("DescribeCustomAvailabilityZones")
 DescribeDBClusterBacktracks = Action("DescribeDBClusterBacktracks")
@@ -177,4 +182,5 @@ StopDBInstance = Action("StopDBInstance")
 StopDBInstanceAutomatedBackupsReplication = Action(
     "StopDBInstanceAutomatedBackupsReplication"
 )
+SwitchoverBlueGreenDeployment = Action("SwitchoverBlueGreenDeployment")
 SwitchoverReadReplica = Action("SwitchoverReadReplica")

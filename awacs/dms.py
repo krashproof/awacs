@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "dms"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -24,16 +26,29 @@ class ARN(BaseARN):
 
 AddTagsToResource = Action("AddTagsToResource")
 ApplyPendingMaintenanceAction = Action("ApplyPendingMaintenanceAction")
+AssociateExtensionPack = Action("AssociateExtensionPack")
+CancelMetadataModelAssessment = Action("CancelMetadataModelAssessment")
+CancelMetadataModelConversion = Action("CancelMetadataModelConversion")
+CancelMetadataModelExport = Action("CancelMetadataModelExport")
 CancelReplicationTaskAssessmentRun = Action("CancelReplicationTaskAssessmentRun")
+CreateDataProvider = Action("CreateDataProvider")
 CreateEndpoint = Action("CreateEndpoint")
 CreateEventSubscription = Action("CreateEventSubscription")
+CreateFleetAdvisorCollector = Action("CreateFleetAdvisorCollector")
+CreateInstanceProfile = Action("CreateInstanceProfile")
+CreateMigrationProject = Action("CreateMigrationProject")
 CreateReplicationInstance = Action("CreateReplicationInstance")
 CreateReplicationSubnetGroup = Action("CreateReplicationSubnetGroup")
 CreateReplicationTask = Action("CreateReplicationTask")
 DeleteCertificate = Action("DeleteCertificate")
 DeleteConnection = Action("DeleteConnection")
+DeleteDataProvider = Action("DeleteDataProvider")
 DeleteEndpoint = Action("DeleteEndpoint")
 DeleteEventSubscription = Action("DeleteEventSubscription")
+DeleteFleetAdvisorCollector = Action("DeleteFleetAdvisorCollector")
+DeleteFleetAdvisorDatabases = Action("DeleteFleetAdvisorDatabases")
+DeleteInstanceProfile = Action("DeleteInstanceProfile")
+DeleteMigrationProject = Action("DeleteMigrationProject")
 DeleteReplicationInstance = Action("DeleteReplicationInstance")
 DeleteReplicationSubnetGroup = Action("DeleteReplicationSubnetGroup")
 DeleteReplicationTask = Action("DeleteReplicationTask")
@@ -50,6 +65,13 @@ DescribeEndpoints = Action("DescribeEndpoints")
 DescribeEventCategories = Action("DescribeEventCategories")
 DescribeEventSubscriptions = Action("DescribeEventSubscriptions")
 DescribeEvents = Action("DescribeEvents")
+DescribeFleetAdvisorCollectors = Action("DescribeFleetAdvisorCollectors")
+DescribeFleetAdvisorDatabases = Action("DescribeFleetAdvisorDatabases")
+DescribeFleetAdvisorLsaAnalysis = Action("DescribeFleetAdvisorLsaAnalysis")
+DescribeFleetAdvisorSchemaObjectSummary = Action(
+    "DescribeFleetAdvisorSchemaObjectSummary"
+)
+DescribeFleetAdvisorSchemas = Action("DescribeFleetAdvisorSchemas")
 DescribeOrderableReplicationInstances = Action("DescribeOrderableReplicationInstances")
 DescribePendingMaintenanceActions = Action("DescribePendingMaintenanceActions")
 DescribeRefreshSchemasStatus = Action("DescribeRefreshSchemasStatus")
@@ -66,10 +88,25 @@ DescribeReplicationTaskIndividualAssessments = Action(
 DescribeReplicationTasks = Action("DescribeReplicationTasks")
 DescribeSchemas = Action("DescribeSchemas")
 DescribeTableStatistics = Action("DescribeTableStatistics")
+DisassociateExtensionPack = Action("DisassociateExtensionPack")
+ExportMetadataModelAssessment = Action("ExportMetadataModelAssessment")
+GetMetadataModel = Action("GetMetadataModel")
 ImportCertificate = Action("ImportCertificate")
+ListDataProviders = Action("ListDataProviders")
+ListExtensionPacks = Action("ListExtensionPacks")
+ListInstanceProfiles = Action("ListInstanceProfiles")
+ListMetadataModelAssessmentActionItems = Action(
+    "ListMetadataModelAssessmentActionItems"
+)
+ListMetadataModelAssessments = Action("ListMetadataModelAssessments")
+ListMetadataModelConversions = Action("ListMetadataModelConversions")
+ListMetadataModelExports = Action("ListMetadataModelExports")
+ListMigrationProjects = Action("ListMigrationProjects")
 ListTagsForResource = Action("ListTagsForResource")
 ModifyEndpoint = Action("ModifyEndpoint")
 ModifyEventSubscription = Action("ModifyEventSubscription")
+ModifyFleetAdvisorCollector = Action("ModifyFleetAdvisorCollector")
+ModifyFleetAdvisorCollectorStatuses = Action("ModifyFleetAdvisorCollectorStatuses")
 ModifyReplicationInstance = Action("ModifyReplicationInstance")
 ModifyReplicationSubnetGroup = Action("ModifyReplicationSubnetGroup")
 ModifyReplicationTask = Action("ModifyReplicationTask")
@@ -78,8 +115,20 @@ RebootReplicationInstance = Action("RebootReplicationInstance")
 RefreshSchemas = Action("RefreshSchemas")
 ReloadTables = Action("ReloadTables")
 RemoveTagsFromResource = Action("RemoveTagsFromResource")
+RunFleetAdvisorLsaAnalysis = Action("RunFleetAdvisorLsaAnalysis")
+StartMetadataModelAssessment = Action("StartMetadataModelAssessment")
+StartMetadataModelConversion = Action("StartMetadataModelConversion")
+StartMetadataModelExportAsScripts = Action("StartMetadataModelExportAsScripts")
+StartMetadataModelExportToTarget = Action("StartMetadataModelExportToTarget")
+StartMetadataModelImport = Action("StartMetadataModelImport")
 StartReplicationTask = Action("StartReplicationTask")
 StartReplicationTaskAssessment = Action("StartReplicationTaskAssessment")
 StartReplicationTaskAssessmentRun = Action("StartReplicationTaskAssessmentRun")
 StopReplicationTask = Action("StopReplicationTask")
 TestConnection = Action("TestConnection")
+UpdateConversionConfiguration = Action("UpdateConversionConfiguration")
+UpdateDataProvider = Action("UpdateDataProvider")
+UpdateInstanceProfile = Action("UpdateInstanceProfile")
+UpdateMigrationProject = Action("UpdateMigrationProject")
+UpdateSubscriptionsToEventBridge = Action("UpdateSubscriptionsToEventBridge")
+UploadFileMetadataList = Action("UploadFileMetadataList")

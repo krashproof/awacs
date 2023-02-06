@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "proton"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -67,6 +69,10 @@ GetEnvironmentTemplateMinorVersion = Action("GetEnvironmentTemplateMinorVersion"
 GetEnvironmentTemplateVersion = Action("GetEnvironmentTemplateVersion")
 GetRepository = Action("GetRepository")
 GetRepositorySyncStatus = Action("GetRepositorySyncStatus")
+GetResourceTemplateVersionStatusCounts = Action(
+    "GetResourceTemplateVersionStatusCounts"
+)
+GetResourcesSummary = Action("GetResourcesSummary")
 GetService = Action("GetService")
 GetServiceInstance = Action("GetServiceInstance")
 GetServiceTemplate = Action("GetServiceTemplate")

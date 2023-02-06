@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "states"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -28,12 +30,14 @@ DeleteActivity = Action("DeleteActivity")
 DeleteStateMachine = Action("DeleteStateMachine")
 DescribeActivity = Action("DescribeActivity")
 DescribeExecution = Action("DescribeExecution")
+DescribeMapRun = Action("DescribeMapRun")
 DescribeStateMachine = Action("DescribeStateMachine")
 DescribeStateMachineForExecution = Action("DescribeStateMachineForExecution")
 GetActivityTask = Action("GetActivityTask")
 GetExecutionHistory = Action("GetExecutionHistory")
 ListActivities = Action("ListActivities")
 ListExecutions = Action("ListExecutions")
+ListMapRuns = Action("ListMapRuns")
 ListStateMachines = Action("ListStateMachines")
 ListTagsForResource = Action("ListTagsForResource")
 SendTaskFailure = Action("SendTaskFailure")
@@ -44,4 +48,5 @@ StartSyncExecution = Action("StartSyncExecution")
 StopExecution = Action("StopExecution")
 TagResource = Action("TagResource")
 UntagResource = Action("UntagResource")
+UpdateMapRun = Action("UpdateMapRun")
 UpdateStateMachine = Action("UpdateStateMachine")

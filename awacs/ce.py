@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "ce"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -56,8 +58,14 @@ GetTags = Action("GetTags")
 GetUsageForecast = Action("GetUsageForecast")
 ListCostAllocationTags = Action("ListCostAllocationTags")
 ListCostCategoryDefinitions = Action("ListCostCategoryDefinitions")
+ListSavingsPlansPurchaseRecommendationGeneration = Action(
+    "ListSavingsPlansPurchaseRecommendationGeneration"
+)
 ListTagsForResource = Action("ListTagsForResource")
 ProvideAnomalyFeedback = Action("ProvideAnomalyFeedback")
+StartSavingsPlansPurchaseRecommendationGeneration = Action(
+    "StartSavingsPlansPurchaseRecommendationGeneration"
+)
 TagResource = Action("TagResource")
 UntagResource = Action("UntagResource")
 UpdateAnomalyMonitor = Action("UpdateAnomalyMonitor")

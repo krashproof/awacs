@@ -9,7 +9,7 @@ import re
 import types
 from typing import Any, KeysView, NoReturn, Optional, TypeVar, Union
 
-__version__ = "2.2.0"
+__version__ = "2.3.0"
 
 valid_names = re.compile(r"^[a-zA-Z0-9]+$")
 
@@ -18,9 +18,9 @@ class AWSObject:
     def __init__(
         self,
         name: Optional[str],
-        type: Any = None,
-        dictname: Any = None,
-        props: dict = None,
+        type: Optional[Any] = None,
+        dictname: Optional[Any] = None,
+        props: Optional[dict] = None,
         **kwargs: Any
     ) -> None:
         self.name = name

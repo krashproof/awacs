@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "backup"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -22,12 +24,14 @@ class ARN(BaseARN):
         )
 
 
+CancelLegalHold = Action("CancelLegalHold")
 CopyFromBackupVault = Action("CopyFromBackupVault")
 CopyIntoBackupVault = Action("CopyIntoBackupVault")
 CreateBackupPlan = Action("CreateBackupPlan")
 CreateBackupSelection = Action("CreateBackupSelection")
 CreateBackupVault = Action("CreateBackupVault")
 CreateFramework = Action("CreateFramework")
+CreateLegalHold = Action("CreateLegalHold")
 CreateReportPlan = Action("CreateReportPlan")
 DeleteBackupPlan = Action("DeleteBackupPlan")
 DeleteBackupSelection = Action("DeleteBackupSelection")
@@ -50,6 +54,7 @@ DescribeReportJob = Action("DescribeReportJob")
 DescribeReportPlan = Action("DescribeReportPlan")
 DescribeRestoreJob = Action("DescribeRestoreJob")
 DisassociateRecoveryPoint = Action("DisassociateRecoveryPoint")
+DisassociateRecoveryPointFromParent = Action("DisassociateRecoveryPointFromParent")
 ExportBackupPlanTemplate = Action("ExportBackupPlanTemplate")
 GetBackupPlan = Action("GetBackupPlan")
 GetBackupPlanFromJSON = Action("GetBackupPlanFromJSON")
@@ -57,6 +62,7 @@ GetBackupPlanFromTemplate = Action("GetBackupPlanFromTemplate")
 GetBackupSelection = Action("GetBackupSelection")
 GetBackupVaultAccessPolicy = Action("GetBackupVaultAccessPolicy")
 GetBackupVaultNotifications = Action("GetBackupVaultNotifications")
+GetLegalHold = Action("GetLegalHold")
 GetRecoveryPointRestoreMetadata = Action("GetRecoveryPointRestoreMetadata")
 GetSupportedResourceTypes = Action("GetSupportedResourceTypes")
 ListBackupJobs = Action("ListBackupJobs")
@@ -67,8 +73,10 @@ ListBackupSelections = Action("ListBackupSelections")
 ListBackupVaults = Action("ListBackupVaults")
 ListCopyJobs = Action("ListCopyJobs")
 ListFrameworks = Action("ListFrameworks")
+ListLegalHolds = Action("ListLegalHolds")
 ListProtectedResources = Action("ListProtectedResources")
 ListRecoveryPointsByBackupVault = Action("ListRecoveryPointsByBackupVault")
+ListRecoveryPointsByLegalHold = Action("ListRecoveryPointsByLegalHold")
 ListRecoveryPointsByResource = Action("ListRecoveryPointsByResource")
 ListReportJobs = Action("ListReportJobs")
 ListReportPlans = Action("ListReportPlans")

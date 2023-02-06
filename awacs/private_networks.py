@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "private-networks"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -41,5 +43,9 @@ ListNetworkResources = Action("ListNetworkResources")
 ListNetworkSites = Action("ListNetworkSites")
 ListNetworks = Action("ListNetworks")
 ListOrders = Action("ListOrders")
+ListTagsForResource = Action("ListTagsForResource")
+Ping = Action("Ping")
+TagResource = Action("TagResource")
+UntagResource = Action("UntagResource")
 UpdateNetworkSite = Action("UpdateNetworkSite")
 UpdateNetworkSitePlan = Action("UpdateNetworkSitePlan")

@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "detective"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -40,8 +42,10 @@ GetPricingInformation = Action("GetPricingInformation")
 GetUsageInformation = Action("GetUsageInformation")
 ListDatasourcePackages = Action("ListDatasourcePackages")
 ListGraphs = Action("ListGraphs")
+ListHighDegreeEntities = Action("ListHighDegreeEntities")
 ListInvitations = Action("ListInvitations")
 ListMembers = Action("ListMembers")
+ListOrganizationAdminAccount = Action("ListOrganizationAdminAccount")
 ListOrganizationAdminAccounts = Action("ListOrganizationAdminAccounts")
 ListTagsForResource = Action("ListTagsForResource")
 RejectInvitation = Action("RejectInvitation")

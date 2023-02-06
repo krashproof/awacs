@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "lex"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -22,6 +24,9 @@ class ARN(BaseARN):
         )
 
 
+BatchCreateCustomVocabularyItem = Action("BatchCreateCustomVocabularyItem")
+BatchDeleteCustomVocabularyItem = Action("BatchDeleteCustomVocabularyItem")
+BatchUpdateCustomVocabularyItem = Action("BatchUpdateCustomVocabularyItem")
 BuildBotLocale = Action("BuildBotLocale")
 CreateBot = Action("CreateBot")
 CreateBotAlias = Action("CreateBotAlias")
@@ -99,6 +104,7 @@ ListBotVersions = Action("ListBotVersions")
 ListBots = Action("ListBots")
 ListBuiltInIntents = Action("ListBuiltInIntents")
 ListBuiltInSlotTypes = Action("ListBuiltInSlotTypes")
+ListCustomVocabularyItems = Action("ListCustomVocabularyItems")
 ListExports = Action("ListExports")
 ListImports = Action("ListImports")
 ListIntents = Action("ListIntents")

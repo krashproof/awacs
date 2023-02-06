@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "workspaces"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -29,6 +31,7 @@ CopyWorkspaceImage = Action("CopyWorkspaceImage")
 CreateConnectClientAddIn = Action("CreateConnectClientAddIn")
 CreateConnectionAlias = Action("CreateConnectionAlias")
 CreateIpGroup = Action("CreateIpGroup")
+CreateStandbyWorkspaces = Action("CreateStandbyWorkspaces")
 CreateTags = Action("CreateTags")
 CreateUpdatedWorkspaceImage = Action("CreateUpdatedWorkspaceImage")
 CreateWorkspaceBundle = Action("CreateWorkspaceBundle")
@@ -65,6 +68,7 @@ ImportWorkspaceImage = Action("ImportWorkspaceImage")
 ListAvailableManagementCidrRanges = Action("ListAvailableManagementCidrRanges")
 MigrateWorkspace = Action("MigrateWorkspace")
 ModifyAccount = Action("ModifyAccount")
+ModifyCertificateBasedAuthProperties = Action("ModifyCertificateBasedAuthProperties")
 ModifyClientProperties = Action("ModifyClientProperties")
 ModifySamlProperties = Action("ModifySamlProperties")
 ModifySelfservicePermissions = Action("ModifySelfservicePermissions")

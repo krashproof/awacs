@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "connect"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -45,6 +47,7 @@ CreateIntegrationAssociation = Action("CreateIntegrationAssociation")
 CreateQueue = Action("CreateQueue")
 CreateQuickConnect = Action("CreateQuickConnect")
 CreateRoutingProfile = Action("CreateRoutingProfile")
+CreateRule = Action("CreateRule")
 CreateSecurityProfile = Action("CreateSecurityProfile")
 CreateTaskTemplate = Action("CreateTaskTemplate")
 CreateTrafficDistributionGroup = Action("CreateTrafficDistributionGroup")
@@ -58,6 +61,7 @@ DeleteHoursOfOperation = Action("DeleteHoursOfOperation")
 DeleteInstance = Action("DeleteInstance")
 DeleteIntegrationAssociation = Action("DeleteIntegrationAssociation")
 DeleteQuickConnect = Action("DeleteQuickConnect")
+DeleteRule = Action("DeleteRule")
 DeleteSecurityProfile = Action("DeleteSecurityProfile")
 DeleteTaskTemplate = Action("DeleteTaskTemplate")
 DeleteTrafficDistributionGroup = Action("DeleteTrafficDistributionGroup")
@@ -69,6 +73,9 @@ DescribeAgentStatus = Action("DescribeAgentStatus")
 DescribeContact = Action("DescribeContact")
 DescribeContactFlow = Action("DescribeContactFlow")
 DescribeContactFlowModule = Action("DescribeContactFlowModule")
+DescribeForecastingPlanningSchedulingIntegration = Action(
+    "DescribeForecastingPlanningSchedulingIntegration"
+)
 DescribeHoursOfOperation = Action("DescribeHoursOfOperation")
 DescribeInstance = Action("DescribeInstance")
 DescribeInstanceAttribute = Action("DescribeInstanceAttribute")
@@ -77,6 +84,7 @@ DescribePhoneNumber = Action("DescribePhoneNumber")
 DescribeQueue = Action("DescribeQueue")
 DescribeQuickConnect = Action("DescribeQuickConnect")
 DescribeRoutingProfile = Action("DescribeRoutingProfile")
+DescribeRule = Action("DescribeRule")
 DescribeSecurityProfile = Action("DescribeSecurityProfile")
 DescribeTrafficDistributionGroup = Action("DescribeTrafficDistributionGroup")
 DescribeUser = Action("DescribeUser")
@@ -94,6 +102,7 @@ DisassociatePhoneNumberContactFlow = Action("DisassociatePhoneNumberContactFlow"
 DisassociateQueueQuickConnects = Action("DisassociateQueueQuickConnects")
 DisassociateRoutingProfileQueues = Action("DisassociateRoutingProfileQueues")
 DisassociateSecurityKey = Action("DisassociateSecurityKey")
+DismissUserContact = Action("DismissUserContact")
 GetContactAttributes = Action("GetContactAttributes")
 GetCurrentMetricData = Action("GetCurrentMetricData")
 GetCurrentUserData = Action("GetCurrentUserData")
@@ -125,6 +134,7 @@ ListQuickConnects = Action("ListQuickConnects")
 ListRealtimeContactAnalysisSegments = Action("ListRealtimeContactAnalysisSegments")
 ListRoutingProfileQueues = Action("ListRoutingProfileQueues")
 ListRoutingProfiles = Action("ListRoutingProfiles")
+ListRule = Action("ListRule")
 ListSecurityKeys = Action("ListSecurityKeys")
 ListSecurityProfilePermissions = Action("ListSecurityProfilePermissions")
 ListSecurityProfiles = Action("ListSecurityProfiles")
@@ -135,6 +145,7 @@ ListUseCases = Action("ListUseCases")
 ListUserHierarchyGroups = Action("ListUserHierarchyGroups")
 ListUsers = Action("ListUsers")
 ModifyInstance = Action("ModifyInstance")
+MonitorContact = Action("MonitorContact")
 PutUserStatus = Action("PutUserStatus")
 ReleasePhoneNumber = Action("ReleasePhoneNumber")
 ReplicateInstance = Action("ReplicateInstance")
@@ -148,11 +159,17 @@ SearchVocabularies = Action("SearchVocabularies")
 StartChatContact = Action("StartChatContact")
 StartContactRecording = Action("StartContactRecording")
 StartContactStreaming = Action("StartContactStreaming")
+StartForecastingPlanningSchedulingIntegration = Action(
+    "StartForecastingPlanningSchedulingIntegration"
+)
 StartOutboundVoiceContact = Action("StartOutboundVoiceContact")
 StartTaskContact = Action("StartTaskContact")
 StopContact = Action("StopContact")
 StopContactRecording = Action("StopContactRecording")
 StopContactStreaming = Action("StopContactStreaming")
+StopForecastingPlanningSchedulingIntegration = Action(
+    "StopForecastingPlanningSchedulingIntegration"
+)
 SuspendContactRecording = Action("SuspendContactRecording")
 TagResource = Action("TagResource")
 TransferContact = Action("TransferContact")
@@ -169,6 +186,7 @@ UpdateContactSchedule = Action("UpdateContactSchedule")
 UpdateHoursOfOperation = Action("UpdateHoursOfOperation")
 UpdateInstanceAttribute = Action("UpdateInstanceAttribute")
 UpdateInstanceStorageConfig = Action("UpdateInstanceStorageConfig")
+UpdateParticipantRoleConfig = Action("UpdateParticipantRoleConfig")
 UpdatePhoneNumber = Action("UpdatePhoneNumber")
 UpdateQueueHoursOfOperation = Action("UpdateQueueHoursOfOperation")
 UpdateQueueMaxContacts = Action("UpdateQueueMaxContacts")
@@ -183,6 +201,7 @@ UpdateRoutingProfileDefaultOutboundQueue = Action(
 )
 UpdateRoutingProfileName = Action("UpdateRoutingProfileName")
 UpdateRoutingProfileQueues = Action("UpdateRoutingProfileQueues")
+UpdateRule = Action("UpdateRule")
 UpdateSecurityProfile = Action("UpdateSecurityProfile")
 UpdateTaskTemplate = Action("UpdateTaskTemplate")
 UpdateTrafficDistribution = Action("UpdateTrafficDistribution")

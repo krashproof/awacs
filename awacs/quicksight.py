@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "quicksight"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -48,6 +50,7 @@ CreateThemeAlias = Action("CreateThemeAlias")
 CreateUser = Action("CreateUser")
 CreateVPCConnection = Action("CreateVPCConnection")
 DeleteAccountCustomization = Action("DeleteAccountCustomization")
+DeleteAccountSubscription = Action("DeleteAccountSubscription")
 DeleteAnalysis = Action("DeleteAnalysis")
 DeleteCustomPermissions = Action("DeleteCustomPermissions")
 DeleteDashboard = Action("DeleteDashboard")
@@ -133,6 +136,8 @@ RestoreAnalysis = Action("RestoreAnalysis")
 ScopeDownPolicy = Action("ScopeDownPolicy")
 SearchAnalyses = Action("SearchAnalyses")
 SearchDashboards = Action("SearchDashboards")
+SearchDataSets = Action("SearchDataSets")
+SearchDataSources = Action("SearchDataSources")
 SearchDirectoryGroups = Action("SearchDirectoryGroups")
 SearchFolders = Action("SearchFolders")
 SearchGroups = Action("SearchGroups")

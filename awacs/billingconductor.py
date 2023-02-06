@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "billingconductor"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -43,6 +45,7 @@ DisassociatePricingRules = Action("DisassociatePricingRules")
 ListAccountAssociations = Action("ListAccountAssociations")
 ListBillingGroupCostReports = Action("ListBillingGroupCostReports")
 ListBillingGroups = Action("ListBillingGroups")
+ListCustomLineItemVersions = Action("ListCustomLineItemVersions")
 ListCustomLineItems = Action("ListCustomLineItems")
 ListPricingPlans = Action("ListPricingPlans")
 ListPricingPlansAssociatedWithPricingRule = Action(

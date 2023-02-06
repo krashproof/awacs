@@ -3,15 +3,17 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
-service_name = "AWS Certificate Manager Private Certificate Authority"
+service_name = "AWS Private Certificate Authority"
 prefix = "acm-pca"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 

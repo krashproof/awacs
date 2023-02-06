@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "ec2"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -22,6 +24,7 @@ class ARN(BaseARN):
         )
 
 
+AcceptAddressTransfer = Action("AcceptAddressTransfer")
 AcceptReservedInstancesExchangeQuote = Action("AcceptReservedInstancesExchangeQuote")
 AcceptTransitGatewayMulticastDomainAssociations = Action(
     "AcceptTransitGatewayMulticastDomainAssociations"
@@ -57,6 +60,7 @@ AssociateVpcCidrBlock = Action("AssociateVpcCidrBlock")
 AttachClassicLinkVpc = Action("AttachClassicLinkVpc")
 AttachInternetGateway = Action("AttachInternetGateway")
 AttachNetworkInterface = Action("AttachNetworkInterface")
+AttachVerifiedAccessTrustProvider = Action("AttachVerifiedAccessTrustProvider")
 AttachVolume = Action("AttachVolume")
 AttachVpnGateway = Action("AttachVpnGateway")
 AuthorizeClientVpnIngress = Action("AuthorizeClientVpnIngress")
@@ -68,6 +72,7 @@ CancelCapacityReservation = Action("CancelCapacityReservation")
 CancelCapacityReservationFleets = Action("CancelCapacityReservationFleets")
 CancelConversionTask = Action("CancelConversionTask")
 CancelExportTask = Action("CancelExportTask")
+CancelImageLaunchPermission = Action("CancelImageLaunchPermission")
 CancelImportTask = Action("CancelImportTask")
 CancelReservedInstancesListing = Action("CancelReservedInstancesListing")
 CancelSpotFleetRequests = Action("CancelSpotFleetRequests")
@@ -155,6 +160,10 @@ CreateTransitGatewayRouteTableAnnouncement = Action(
     "CreateTransitGatewayRouteTableAnnouncement"
 )
 CreateTransitGatewayVpcAttachment = Action("CreateTransitGatewayVpcAttachment")
+CreateVerifiedAccessEndpoint = Action("CreateVerifiedAccessEndpoint")
+CreateVerifiedAccessGroup = Action("CreateVerifiedAccessGroup")
+CreateVerifiedAccessInstance = Action("CreateVerifiedAccessInstance")
+CreateVerifiedAccessTrustProvider = Action("CreateVerifiedAccessTrustProvider")
 CreateVolume = Action("CreateVolume")
 CreateVpc = Action("CreateVpc")
 CreateVpcEndpoint = Action("CreateVpcEndpoint")
@@ -240,6 +249,10 @@ DeleteTransitGatewayRouteTableAnnouncement = Action(
     "DeleteTransitGatewayRouteTableAnnouncement"
 )
 DeleteTransitGatewayVpcAttachment = Action("DeleteTransitGatewayVpcAttachment")
+DeleteVerifiedAccessEndpoint = Action("DeleteVerifiedAccessEndpoint")
+DeleteVerifiedAccessGroup = Action("DeleteVerifiedAccessGroup")
+DeleteVerifiedAccessInstance = Action("DeleteVerifiedAccessInstance")
+DeleteVerifiedAccessTrustProvider = Action("DeleteVerifiedAccessTrustProvider")
 DeleteVolume = Action("DeleteVolume")
 DeleteVpc = Action("DeleteVpc")
 DeleteVpcEndpointConnectionNotifications = Action(
@@ -267,10 +280,14 @@ DeregisterTransitGatewayMulticastGroupSources = Action(
     "DeregisterTransitGatewayMulticastGroupSources"
 )
 DescribeAccountAttributes = Action("DescribeAccountAttributes")
+DescribeAddressTransfers = Action("DescribeAddressTransfers")
 DescribeAddresses = Action("DescribeAddresses")
 DescribeAddressesAttribute = Action("DescribeAddressesAttribute")
 DescribeAggregateIdFormat = Action("DescribeAggregateIdFormat")
 DescribeAvailabilityZones = Action("DescribeAvailabilityZones")
+DescribeAwsNetworkPerformanceMetricSubscriptions = Action(
+    "DescribeAwsNetworkPerformanceMetricSubscriptions"
+)
 DescribeBundleTasks = Action("DescribeBundleTasks")
 DescribeByoipCidrs = Action("DescribeByoipCidrs")
 DescribeCapacityReservationFleets = Action("DescribeCapacityReservationFleets")
@@ -407,6 +424,13 @@ DescribeTransitGatewayRouteTables = Action("DescribeTransitGatewayRouteTables")
 DescribeTransitGatewayVpcAttachments = Action("DescribeTransitGatewayVpcAttachments")
 DescribeTransitGateways = Action("DescribeTransitGateways")
 DescribeTrunkInterfaceAssociations = Action("DescribeTrunkInterfaceAssociations")
+DescribeVerifiedAccessEndpoints = Action("DescribeVerifiedAccessEndpoints")
+DescribeVerifiedAccessGroups = Action("DescribeVerifiedAccessGroups")
+DescribeVerifiedAccessInstanceLoggingConfigurations = Action(
+    "DescribeVerifiedAccessInstanceLoggingConfigurations"
+)
+DescribeVerifiedAccessInstances = Action("DescribeVerifiedAccessInstances")
+DescribeVerifiedAccessTrustProviders = Action("DescribeVerifiedAccessTrustProviders")
 DescribeVolumeAttribute = Action("DescribeVolumeAttribute")
 DescribeVolumeStatus = Action("DescribeVolumeStatus")
 DescribeVolumes = Action("DescribeVolumes")
@@ -431,8 +455,13 @@ DescribeVpnGateways = Action("DescribeVpnGateways")
 DetachClassicLinkVpc = Action("DetachClassicLinkVpc")
 DetachInternetGateway = Action("DetachInternetGateway")
 DetachNetworkInterface = Action("DetachNetworkInterface")
+DetachVerifiedAccessTrustProvider = Action("DetachVerifiedAccessTrustProvider")
 DetachVolume = Action("DetachVolume")
 DetachVpnGateway = Action("DetachVpnGateway")
+DisableAddressTransfer = Action("DisableAddressTransfer")
+DisableAwsNetworkPerformanceMetricSubscription = Action(
+    "DisableAwsNetworkPerformanceMetricSubscription"
+)
 DisableEbsEncryptionByDefault = Action("DisableEbsEncryptionByDefault")
 DisableFastLaunch = Action("DisableFastLaunch")
 DisableFastSnapshotRestores = Action("DisableFastSnapshotRestores")
@@ -459,11 +488,18 @@ DisassociateTransitGatewayPolicyTable = Action("DisassociateTransitGatewayPolicy
 DisassociateTransitGatewayRouteTable = Action("DisassociateTransitGatewayRouteTable")
 DisassociateTrunkInterface = Action("DisassociateTrunkInterface")
 DisassociateVpcCidrBlock = Action("DisassociateVpcCidrBlock")
+EnableAddressTransfer = Action("EnableAddressTransfer")
+EnableAwsNetworkPerformanceMetricSubscription = Action(
+    "EnableAwsNetworkPerformanceMetricSubscription"
+)
 EnableEbsEncryptionByDefault = Action("EnableEbsEncryptionByDefault")
 EnableFastLaunch = Action("EnableFastLaunch")
 EnableFastSnapshotRestores = Action("EnableFastSnapshotRestores")
 EnableImageDeprecation = Action("EnableImageDeprecation")
 EnableIpamOrganizationAdminAccount = Action("EnableIpamOrganizationAdminAccount")
+EnableReachabilityAnalyzerOrganizationSharing = Action(
+    "EnableReachabilityAnalyzerOrganizationSharing"
+)
 EnableSerialConsoleAccess = Action("EnableSerialConsoleAccess")
 EnableTransitGatewayRouteTablePropagation = Action(
     "EnableTransitGatewayRouteTablePropagation"
@@ -482,6 +518,7 @@ GetAssociatedEnclaveCertificateIamRoles = Action(
     "GetAssociatedEnclaveCertificateIamRoles"
 )
 GetAssociatedIpv6PoolCidrs = Action("GetAssociatedIpv6PoolCidrs")
+GetAwsNetworkPerformanceData = Action("GetAwsNetworkPerformanceData")
 GetCapacityReservationUsage = Action("GetCapacityReservationUsage")
 GetCoipPoolUsage = Action("GetCoipPoolUsage")
 GetConsoleOutput = Action("GetConsoleOutput")
@@ -530,6 +567,8 @@ GetTransitGatewayRouteTableAssociations = Action(
 GetTransitGatewayRouteTablePropagations = Action(
     "GetTransitGatewayRouteTablePropagations"
 )
+GetVerifiedAccessEndpointPolicy = Action("GetVerifiedAccessEndpointPolicy")
+GetVerifiedAccessGroupPolicy = Action("GetVerifiedAccessGroupPolicy")
 GetVpnConnectionDeviceSampleConfiguration = Action(
     "GetVpnConnectionDeviceSampleConfiguration"
 )
@@ -592,6 +631,15 @@ ModifyTransitGatewayPrefixListReference = Action(
     "ModifyTransitGatewayPrefixListReference"
 )
 ModifyTransitGatewayVpcAttachment = Action("ModifyTransitGatewayVpcAttachment")
+ModifyVerifiedAccessEndpoint = Action("ModifyVerifiedAccessEndpoint")
+ModifyVerifiedAccessEndpointPolicy = Action("ModifyVerifiedAccessEndpointPolicy")
+ModifyVerifiedAccessGroup = Action("ModifyVerifiedAccessGroup")
+ModifyVerifiedAccessGroupPolicy = Action("ModifyVerifiedAccessGroupPolicy")
+ModifyVerifiedAccessInstance = Action("ModifyVerifiedAccessInstance")
+ModifyVerifiedAccessInstanceLoggingConfiguration = Action(
+    "ModifyVerifiedAccessInstanceLoggingConfiguration"
+)
+ModifyVerifiedAccessTrustProvider = Action("ModifyVerifiedAccessTrustProvider")
 ModifyVolume = Action("ModifyVolume")
 ModifyVolumeAttribute = Action("ModifyVolumeAttribute")
 ModifyVpcAttribute = Action("ModifyVpcAttribute")

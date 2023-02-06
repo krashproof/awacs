@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "iottwinmaker"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -26,25 +28,33 @@ BatchPutPropertyValues = Action("BatchPutPropertyValues")
 CreateComponentType = Action("CreateComponentType")
 CreateEntity = Action("CreateEntity")
 CreateScene = Action("CreateScene")
+CreateSyncJob = Action("CreateSyncJob")
 CreateWorkspace = Action("CreateWorkspace")
 DeleteComponentType = Action("DeleteComponentType")
 DeleteEntity = Action("DeleteEntity")
 DeleteScene = Action("DeleteScene")
+DeleteSyncJob = Action("DeleteSyncJob")
 DeleteWorkspace = Action("DeleteWorkspace")
+ExecuteQuery = Action("ExecuteQuery")
 GetComponentType = Action("GetComponentType")
 GetEntity = Action("GetEntity")
+GetPricingPlan = Action("GetPricingPlan")
 GetPropertyValue = Action("GetPropertyValue")
 GetPropertyValueHistory = Action("GetPropertyValueHistory")
 GetScene = Action("GetScene")
+GetSyncJob = Action("GetSyncJob")
 GetWorkspace = Action("GetWorkspace")
 ListComponentTypes = Action("ListComponentTypes")
 ListEntities = Action("ListEntities")
 ListScenes = Action("ListScenes")
+ListSyncJobs = Action("ListSyncJobs")
+ListSyncResources = Action("ListSyncResources")
 ListTagsForResource = Action("ListTagsForResource")
 ListWorkspaces = Action("ListWorkspaces")
 TagResource = Action("TagResource")
 UntagResource = Action("UntagResource")
 UpdateComponentType = Action("UpdateComponentType")
 UpdateEntity = Action("UpdateEntity")
+UpdatePricingPlan = Action("UpdatePricingPlan")
 UpdateScene = Action("UpdateScene")
 UpdateWorkspace = Action("UpdateWorkspace")

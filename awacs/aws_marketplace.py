@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "aws-marketplace"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -56,13 +58,17 @@ GetAgreementApprovalRequest = Action("GetAgreementApprovalRequest")
 GetAgreementRequest = Action("GetAgreementRequest")
 GetAgreementTerms = Action("GetAgreementTerms")
 GetEntitlements = Action("GetEntitlements")
+GetSellerDashboard = Action("GetSellerDashboard")
 ListAgreementApprovalRequests = Action("ListAgreementApprovalRequests")
 ListAgreementRequests = Action("ListAgreementRequests")
 ListBuilds = Action("ListBuilds")
 ListChangeSets = Action("ListChangeSets")
 ListEntities = Action("ListEntities")
+ListEntitlementDetails = Action("ListEntitlementDetails")
+ListPrivateListings = Action("ListPrivateListings")
 ListPrivateMarketplaceProducts = Action("ListPrivateMarketplaceProducts")
 ListPrivateMarketplaceRequests = Action("ListPrivateMarketplaceRequests")
+ListTagsForResource = Action("ListTagsForResource")
 ListTasks = Action("ListTasks")
 MeterUsage = Action("MeterUsage")
 PutProcurementSystemConfiguration = Action("PutProcurementSystemConfiguration")
@@ -75,7 +81,9 @@ StartChangeSet = Action("StartChangeSet")
 StartPrivateMarketplace = Action("StartPrivateMarketplace")
 StopPrivateMarketplace = Action("StopPrivateMarketplace")
 Subscribe = Action("Subscribe")
+TagResource = Action("TagResource")
 Unsubscribe = Action("Unsubscribe")
+UntagResource = Action("UntagResource")
 UpdateAgreementApprovalRequest = Action("UpdateAgreementApprovalRequest")
 UpdatePrivateMarketplaceProfile = Action("UpdatePrivateMarketplaceProfile")
 UpdatePrivateMarketplaceSettings = Action("UpdatePrivateMarketplaceSettings")

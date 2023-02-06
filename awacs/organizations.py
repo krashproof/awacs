@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "organizations"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -35,6 +37,7 @@ DeclineHandshake = Action("DeclineHandshake")
 DeleteOrganization = Action("DeleteOrganization")
 DeleteOrganizationalUnit = Action("DeleteOrganizationalUnit")
 DeletePolicy = Action("DeletePolicy")
+DeleteResourcePolicy = Action("DeleteResourcePolicy")
 DeregisterDelegatedAdministrator = Action("DeregisterDelegatedAdministrator")
 DescribeAccount = Action("DescribeAccount")
 DescribeCreateAccountStatus = Action("DescribeCreateAccountStatus")
@@ -43,6 +46,7 @@ DescribeHandshake = Action("DescribeHandshake")
 DescribeOrganization = Action("DescribeOrganization")
 DescribeOrganizationalUnit = Action("DescribeOrganizationalUnit")
 DescribePolicy = Action("DescribePolicy")
+DescribeResourcePolicy = Action("DescribeResourcePolicy")
 DetachPolicy = Action("DetachPolicy")
 DisableAWSServiceAccess = Action("DisableAWSServiceAccess")
 DisablePolicyType = Action("DisablePolicyType")
@@ -68,6 +72,7 @@ ListRoots = Action("ListRoots")
 ListTagsForResource = Action("ListTagsForResource")
 ListTargetsForPolicy = Action("ListTargetsForPolicy")
 MoveAccount = Action("MoveAccount")
+PutResourcePolicy = Action("PutResourcePolicy")
 RegisterDelegatedAdministrator = Action("RegisterDelegatedAdministrator")
 RemoveAccountFromOrganization = Action("RemoveAccountFromOrganization")
 TagResource = Action("TagResource")

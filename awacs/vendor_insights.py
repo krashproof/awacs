@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "vendor-insights"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -39,4 +41,13 @@ ListEntitledSecurityProfileSnapshots = Action("ListEntitledSecurityProfileSnapsh
 ListEntitledSecurityProfiles = Action("ListEntitledSecurityProfiles")
 ListSecurityProfileSnapshots = Action("ListSecurityProfileSnapshots")
 ListSecurityProfiles = Action("ListSecurityProfiles")
+ListTagsForResource = Action("ListTagsForResource")
+TagResource = Action("TagResource")
+UntagResource = Action("UntagResource")
 UpdateSecurityProfile = Action("UpdateSecurityProfile")
+UpdateSecurityProfileSnapshotCreationConfiguration = Action(
+    "UpdateSecurityProfileSnapshotCreationConfiguration"
+)
+UpdateSecurityProfileSnapshotReleaseConfiguration = Action(
+    "UpdateSecurityProfileSnapshotReleaseConfiguration"
+)

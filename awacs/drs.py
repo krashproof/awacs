@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "drs"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -85,6 +87,7 @@ NotifyReplicationServerAuthenticationForDrs = Action(
 )
 NotifyVolumeEventForDrs = Action("NotifyVolumeEventForDrs")
 RetryDataReplication = Action("RetryDataReplication")
+ReverseReplication = Action("ReverseReplication")
 SendAgentLogsForDrs = Action("SendAgentLogsForDrs")
 SendAgentMetricsForDrs = Action("SendAgentMetricsForDrs")
 SendChannelCommandResultForDrs = Action("SendChannelCommandResultForDrs")
@@ -93,7 +96,9 @@ SendClientMetricsForDrs = Action("SendClientMetricsForDrs")
 SendVolumeStatsForDrs = Action("SendVolumeStatsForDrs")
 StartFailbackLaunch = Action("StartFailbackLaunch")
 StartRecovery = Action("StartRecovery")
+StartReplication = Action("StartReplication")
 StopFailback = Action("StopFailback")
+StopReplication = Action("StopReplication")
 TagResource = Action("TagResource")
 TerminateRecoveryInstances = Action("TerminateRecoveryInstances")
 UntagResource = Action("UntagResource")

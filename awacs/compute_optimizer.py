@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "compute-optimizer"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -27,11 +29,16 @@ DescribeRecommendationExportJobs = Action("DescribeRecommendationExportJobs")
 ExportAutoScalingGroupRecommendations = Action("ExportAutoScalingGroupRecommendations")
 ExportEBSVolumeRecommendations = Action("ExportEBSVolumeRecommendations")
 ExportEC2InstanceRecommendations = Action("ExportEC2InstanceRecommendations")
+ExportECSServiceRecommendations = Action("ExportECSServiceRecommendations")
 ExportLambdaFunctionRecommendations = Action("ExportLambdaFunctionRecommendations")
 GetAutoScalingGroupRecommendations = Action("GetAutoScalingGroupRecommendations")
 GetEBSVolumeRecommendations = Action("GetEBSVolumeRecommendations")
 GetEC2InstanceRecommendations = Action("GetEC2InstanceRecommendations")
 GetEC2RecommendationProjectedMetrics = Action("GetEC2RecommendationProjectedMetrics")
+GetECSServiceRecommendationProjectedMetrics = Action(
+    "GetECSServiceRecommendationProjectedMetrics"
+)
+GetECSServiceRecommendations = Action("GetECSServiceRecommendations")
 GetEffectiveRecommendationPreferences = Action("GetEffectiveRecommendationPreferences")
 GetEnrollmentStatus = Action("GetEnrollmentStatus")
 GetEnrollmentStatusesForOrganization = Action("GetEnrollmentStatusesForOrganization")

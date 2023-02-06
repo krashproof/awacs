@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "ses"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -22,6 +24,7 @@ class ARN(BaseARN):
         )
 
 
+BatchGetMetricData = Action("BatchGetMetricData")
 CloneReceiptRuleSet = Action("CloneReceiptRuleSet")
 CreateConfigurationSet = Action("CreateConfigurationSet")
 CreateConfigurationSetEventDestination = Action(
@@ -107,6 +110,7 @@ ListIdentityPolicies = Action("ListIdentityPolicies")
 ListImportJobs = Action("ListImportJobs")
 ListReceiptFilters = Action("ListReceiptFilters")
 ListReceiptRuleSets = Action("ListReceiptRuleSets")
+ListRecommendations = Action("ListRecommendations")
 ListSuppressedDestinations = Action("ListSuppressedDestinations")
 ListTagsForResource = Action("ListTagsForResource")
 ListTemplates = Action("ListTemplates")
@@ -115,11 +119,13 @@ PutAccountDedicatedIpWarmupAttributes = Action("PutAccountDedicatedIpWarmupAttri
 PutAccountDetails = Action("PutAccountDetails")
 PutAccountSendingAttributes = Action("PutAccountSendingAttributes")
 PutAccountSuppressionAttributes = Action("PutAccountSuppressionAttributes")
+PutAccountVdmAttributes = Action("PutAccountVdmAttributes")
 PutConfigurationSetDeliveryOptions = Action("PutConfigurationSetDeliveryOptions")
 PutConfigurationSetReputationOptions = Action("PutConfigurationSetReputationOptions")
 PutConfigurationSetSendingOptions = Action("PutConfigurationSetSendingOptions")
 PutConfigurationSetSuppressionOptions = Action("PutConfigurationSetSuppressionOptions")
 PutConfigurationSetTrackingOptions = Action("PutConfigurationSetTrackingOptions")
+PutConfigurationSetVdmOptions = Action("PutConfigurationSetVdmOptions")
 PutDedicatedIpInPool = Action("PutDedicatedIpInPool")
 PutDedicatedIpWarmupAttributes = Action("PutDedicatedIpWarmupAttributes")
 PutDeliverabilityDashboardOption = Action("PutDeliverabilityDashboardOption")

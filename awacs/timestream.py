@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "timestream"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -34,6 +36,8 @@ DescribeEndpoints = Action("DescribeEndpoints")
 DescribeScheduledQuery = Action("DescribeScheduledQuery")
 DescribeTable = Action("DescribeTable")
 ExecuteScheduledQuery = Action("ExecuteScheduledQuery")
+GetAwsBackupStatus = Action("GetAwsBackupStatus")
+GetAwsRestoreStatus = Action("GetAwsRestoreStatus")
 ListDatabases = Action("ListDatabases")
 ListMeasures = Action("ListMeasures")
 ListScheduledQueries = Action("ListScheduledQueries")
@@ -42,6 +46,8 @@ ListTagsForResource = Action("ListTagsForResource")
 PrepareQuery = Action("PrepareQuery")
 Select = Action("Select")
 SelectValues = Action("SelectValues")
+StartAwsBackupJob = Action("StartAwsBackupJob")
+StartAwsRestoreJob = Action("StartAwsRestoreJob")
 TagResource = Action("TagResource")
 UntagResource = Action("UntagResource")
 UpdateDatabase = Action("UpdateDatabase")

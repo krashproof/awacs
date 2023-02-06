@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "license-manager"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -64,7 +66,9 @@ ListLicenseSpecificationsForResource = Action("ListLicenseSpecificationsForResou
 ListLicenseVersions = Action("ListLicenseVersions")
 ListLicenses = Action("ListLicenses")
 ListReceivedGrants = Action("ListReceivedGrants")
+ListReceivedGrantsForOrganization = Action("ListReceivedGrantsForOrganization")
 ListReceivedLicenses = Action("ListReceivedLicenses")
+ListReceivedLicensesForOrganization = Action("ListReceivedLicensesForOrganization")
 ListResourceInventory = Action("ListResourceInventory")
 ListTagsForResource = Action("ListTagsForResource")
 ListTokens = Action("ListTokens")

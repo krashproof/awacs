@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "redshift-serverless"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -40,18 +42,21 @@ GetNamespace = Action("GetNamespace")
 GetRecoveryPoint = Action("GetRecoveryPoint")
 GetResourcePolicy = Action("GetResourcePolicy")
 GetSnapshot = Action("GetSnapshot")
+GetTableRestoreStatus = Action("GetTableRestoreStatus")
 GetUsageLimit = Action("GetUsageLimit")
 GetWorkgroup = Action("GetWorkgroup")
 ListEndpointAccess = Action("ListEndpointAccess")
 ListNamespaces = Action("ListNamespaces")
 ListRecoveryPoints = Action("ListRecoveryPoints")
 ListSnapshots = Action("ListSnapshots")
+ListTableRestoreStatus = Action("ListTableRestoreStatus")
 ListTagsForResource = Action("ListTagsForResource")
 ListUsageLimits = Action("ListUsageLimits")
 ListWorkgroups = Action("ListWorkgroups")
 PutResourcePolicy = Action("PutResourcePolicy")
 RestoreFromRecoveryPoint = Action("RestoreFromRecoveryPoint")
 RestoreFromSnapshot = Action("RestoreFromSnapshot")
+RestoreTableFromSnapshot = Action("RestoreTableFromSnapshot")
 TagResource = Action("TagResource")
 UntagResource = Action("UntagResource")
 UpdateEndpointAccess = Action("UpdateEndpointAccess")

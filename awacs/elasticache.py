@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "elasticache"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -27,6 +29,7 @@ AuthorizeCacheSecurityGroupIngress = Action("AuthorizeCacheSecurityGroupIngress"
 BatchApplyUpdateAction = Action("BatchApplyUpdateAction")
 BatchStopUpdateAction = Action("BatchStopUpdateAction")
 CompleteMigration = Action("CompleteMigration")
+Connect = Action("Connect")
 CopySnapshot = Action("CopySnapshot")
 CreateCacheCluster = Action("CreateCacheCluster")
 CreateCacheParameterGroup = Action("CreateCacheParameterGroup")

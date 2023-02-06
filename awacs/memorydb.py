@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "memorydb"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -43,6 +45,8 @@ DescribeEngineVersions = Action("DescribeEngineVersions")
 DescribeEvents = Action("DescribeEvents")
 DescribeParameterGroups = Action("DescribeParameterGroups")
 DescribeParameters = Action("DescribeParameters")
+DescribeReservedNodes = Action("DescribeReservedNodes")
+DescribeReservedNodesOfferings = Action("DescribeReservedNodesOfferings")
 DescribeServiceUpdates = Action("DescribeServiceUpdates")
 DescribeSnapshots = Action("DescribeSnapshots")
 DescribeSubnetGroups = Action("DescribeSubnetGroups")
@@ -51,6 +55,7 @@ FailoverShard = Action("FailoverShard")
 ListAllowedNodeTypeUpdates = Action("ListAllowedNodeTypeUpdates")
 ListNodeTypeUpdates = Action("ListNodeTypeUpdates")
 ListTags = Action("ListTags")
+PurchaseReservedNodesOffering = Action("PurchaseReservedNodesOffering")
 ResetParameterGroup = Action("ResetParameterGroup")
 TagResource = Action("TagResource")
 UntagResource = Action("UntagResource")

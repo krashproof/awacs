@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "workdocs"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -39,6 +41,7 @@ DeactivateUser = Action("DeactivateUser")
 DeleteComment = Action("DeleteComment")
 DeleteCustomMetadata = Action("DeleteCustomMetadata")
 DeleteDocument = Action("DeleteDocument")
+DeleteDocumentVersion = Action("DeleteDocumentVersion")
 DeleteFolder = Action("DeleteFolder")
 DeleteFolderContents = Action("DeleteFolderContents")
 DeleteInstance = Action("DeleteInstance")
@@ -73,6 +76,7 @@ RegisterDirectory = Action("RegisterDirectory")
 RemoveAllResourcePermissions = Action("RemoveAllResourcePermissions")
 RemoveResourcePermission = Action("RemoveResourcePermission")
 RemoveUserFromGroup = Action("RemoveUserFromGroup")
+RestoreDocumentVersions = Action("RestoreDocumentVersions")
 UpdateDocument = Action("UpdateDocument")
 UpdateDocumentVersion = Action("UpdateDocumentVersion")
 UpdateFolder = Action("UpdateFolder")

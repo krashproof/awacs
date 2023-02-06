@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "cur"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -24,5 +26,10 @@ class ARN(BaseARN):
 
 DeleteReportDefinition = Action("DeleteReportDefinition")
 DescribeReportDefinitions = Action("DescribeReportDefinitions")
+GetClassicReport = Action("GetClassicReport")
+GetClassicReportPreferences = Action("GetClassicReportPreferences")
+GetUsageReport = Action("GetUsageReport")
 ModifyReportDefinition = Action("ModifyReportDefinition")
+PutClassicReportPreferences = Action("PutClassicReportPreferences")
 PutReportDefinition = Action("PutReportDefinition")
+ValidateReportDestination = Action("ValidateReportDestination")

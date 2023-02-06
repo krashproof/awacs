@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "es"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -28,6 +30,7 @@ AcceptInboundCrossClusterSearchConnection = Action(
 )
 AddTags = Action("AddTags")
 AssociatePackage = Action("AssociatePackage")
+AuthorizeVpcEndpointAccess = Action("AuthorizeVpcEndpointAccess")
 CancelElasticsearchServiceSoftwareUpdate = Action(
     "CancelElasticsearchServiceSoftwareUpdate"
 )
@@ -42,6 +45,7 @@ CreateOutboundCrossClusterSearchConnection = Action(
 )
 CreatePackage = Action("CreatePackage")
 CreateServiceRole = Action("CreateServiceRole")
+CreateVpcEndpoint = Action("CreateVpcEndpoint")
 DeleteDataPrepperPipeline = Action("DeleteDataPrepperPipeline")
 DeleteDomain = Action("DeleteDomain")
 DeleteElasticsearchDomain = Action("DeleteElasticsearchDomain")
@@ -55,12 +59,14 @@ DeleteOutboundCrossClusterSearchConnection = Action(
     "DeleteOutboundCrossClusterSearchConnection"
 )
 DeletePackage = Action("DeletePackage")
+DeleteVpcEndpoint = Action("DeleteVpcEndpoint")
 DescribeDataPrepperPipeline = Action("DescribeDataPrepperPipeline")
 DescribeDomain = Action("DescribeDomain")
 DescribeDomainAutoTunes = Action("DescribeDomainAutoTunes")
 DescribeDomainChangeProgress = Action("DescribeDomainChangeProgress")
 DescribeDomainConfig = Action("DescribeDomainConfig")
 DescribeDomains = Action("DescribeDomains")
+DescribeDryRunProgress = Action("DescribeDryRunProgress")
 DescribeElasticsearchDomain = Action("DescribeElasticsearchDomain")
 DescribeElasticsearchDomainConfig = Action("DescribeElasticsearchDomainConfig")
 DescribeElasticsearchDomains = Action("DescribeElasticsearchDomains")
@@ -85,6 +91,7 @@ DescribeReservedElasticsearchInstances = Action(
 )
 DescribeReservedInstanceOfferings = Action("DescribeReservedInstanceOfferings")
 DescribeReservedInstances = Action("DescribeReservedInstances")
+DescribeVpcEndpoints = Action("DescribeVpcEndpoints")
 DissociatePackage = Action("DissociatePackage")
 ESCrossClusterGet = Action("ESCrossClusterGet")
 ESHttpDelete = Action("ESHttpDelete")
@@ -110,6 +117,9 @@ ListInstanceTypes = Action("ListInstanceTypes")
 ListPackagesForDomain = Action("ListPackagesForDomain")
 ListTags = Action("ListTags")
 ListVersions = Action("ListVersions")
+ListVpcEndpointAccess = Action("ListVpcEndpointAccess")
+ListVpcEndpoints = Action("ListVpcEndpoints")
+ListVpcEndpointsForDomain = Action("ListVpcEndpointsForDomain")
 PurchaseReservedElasticsearchInstance = Action("PurchaseReservedElasticsearchInstance")
 PurchaseReservedElasticsearchInstanceOffering = Action(
     "PurchaseReservedElasticsearchInstanceOffering"
@@ -120,6 +130,7 @@ RejectInboundCrossClusterSearchConnection = Action(
     "RejectInboundCrossClusterSearchConnection"
 )
 RemoveTags = Action("RemoveTags")
+RevokeVpcEndpointAccess = Action("RevokeVpcEndpointAccess")
 StartElasticsearchServiceSoftwareUpdate = Action(
     "StartElasticsearchServiceSoftwareUpdate"
 )
@@ -128,5 +139,6 @@ UpdateDataPrepperPipeline = Action("UpdateDataPrepperPipeline")
 UpdateDomainConfig = Action("UpdateDomainConfig")
 UpdateElasticsearchDomainConfig = Action("UpdateElasticsearchDomainConfig")
 UpdatePackage = Action("UpdatePackage")
+UpdateVpcEndpoint = Action("UpdateVpcEndpoint")
 UpgradeDomain = Action("UpgradeDomain")
 UpgradeElasticsearchDomain = Action("UpgradeElasticsearchDomain")

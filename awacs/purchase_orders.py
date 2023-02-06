@@ -3,6 +3,8 @@
 #
 # See LICENSE file for full license.
 
+from typing import Optional
+
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
@@ -11,7 +13,7 @@ prefix = "purchase-orders"
 
 
 class Action(BaseAction):
-    def __init__(self, action: str = None) -> None:
+    def __init__(self, action: Optional[str] = None) -> None:
         super().__init__(prefix, action)
 
 
@@ -22,5 +24,12 @@ class ARN(BaseARN):
         )
 
 
+AddPurchaseOrder = Action("AddPurchaseOrder")
+DeletePurchaseOrder = Action("DeletePurchaseOrder")
+GetPurchaseOrder = Action("GetPurchaseOrder")
+ListPurchaseOrderInvoices = Action("ListPurchaseOrderInvoices")
+ListPurchaseOrders = Action("ListPurchaseOrders")
 ModifyPurchaseOrders = Action("ModifyPurchaseOrders")
+UpdatePurchaseOrder = Action("UpdatePurchaseOrder")
+UpdatePurchaseOrderStatus = Action("UpdatePurchaseOrderStatus")
 ViewPurchaseOrders = Action("ViewPurchaseOrders")
