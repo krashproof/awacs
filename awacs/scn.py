@@ -8,8 +8,8 @@ from typing import Optional
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
-service_name = "AWS Price List"
-prefix = "pricing"
+service_name = "AWS Supply Chain"
+prefix = "scn"
 
 
 class Action(BaseAction):
@@ -24,8 +24,13 @@ class ARN(BaseARN):
         )
 
 
-DescribeServices = Action("DescribeServices")
-GetAttributeValues = Action("GetAttributeValues")
-GetPriceListFileUrl = Action("GetPriceListFileUrl")
-GetProducts = Action("GetProducts")
-ListPriceLists = Action("ListPriceLists")
+AssignAdminPermissionsToUser = Action("AssignAdminPermissionsToUser")
+CreateInstance = Action("CreateInstance")
+CreateSSOApplication = Action("CreateSSOApplication")
+DeleteInstance = Action("DeleteInstance")
+DeleteSSOApplication = Action("DeleteSSOApplication")
+DescribeInstance = Action("DescribeInstance")
+ListAdminUsers = Action("ListAdminUsers")
+ListInstances = Action("ListInstances")
+RemoveAdminPermissionsForUser = Action("RemoveAdminPermissionsForUser")
+UpdateInstance = Action("UpdateInstance")

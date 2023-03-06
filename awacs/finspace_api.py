@@ -8,8 +8,8 @@ from typing import Optional
 from .aws import Action as BaseAction
 from .aws import BaseARN
 
-service_name = "AWS Price List"
-prefix = "pricing"
+service_name = "Amazon FinSpace API"
+prefix = "finspace-api"
 
 
 class Action(BaseAction):
@@ -24,8 +24,4 @@ class ARN(BaseARN):
         )
 
 
-DescribeServices = Action("DescribeServices")
-GetAttributeValues = Action("GetAttributeValues")
-GetPriceListFileUrl = Action("GetPriceListFileUrl")
-GetProducts = Action("GetProducts")
-ListPriceLists = Action("ListPriceLists")
+GetProgrammaticAccessCredentials = Action("GetProgrammaticAccessCredentials")
